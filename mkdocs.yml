@@ -1,0 +1,110 @@
+site_name: 计算机体系结构实验（2024秋季） | 哈工大（深圳）
+copyright: 'Copyright &copy; 2019 - 2024 哈尔滨工业大学（深圳）'
+# repo_name: ''
+# repo_url: ''
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - mdx_math:
+      enable_dollar_delimiter: True
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+  # - mathjaxhelper.js
+
+theme:
+  language: 'zh'
+  name: material
+  custom_dir: overrides
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.tabs
+    - navigation.expand
+  icon:
+    logo: fontawesome/solid/microchip
+    repo: fontawesome/brands/git-alt
+    # favicon: fontawesome/solid/microchip
+  palette:
+    - scheme: 'default'
+      primary: 'teal'
+      accent: 'teal'
+      toggle:
+        icon: material/weather-night
+        name: 切换到夜晚模式
+    - scheme: 'slate'
+      primary: 'teal'
+      accent: 'teal'
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到白天模式
+
+nav:
+  - 首页:
+    - 课程概况: index.md
+    - 作业提交说明: homewk.md
+  - 实验一:
+    - 实验概述: lab1/overview.md
+    - 实验原理: lab1/theory.md
+    - 实验步骤: 
+      - 练习1: lab1/step1.md
+      - 练习2: lab1/step2.md
+      - 练习3: lab1/step3.md
+      - 练习4: lab1/step4.md
+    - 预习下一个实验: lab1/preview.md
+  # - 实验二:
+  #   - 实验概述: lab2/overview.md
+  #   - 实验原理: lab2/theory.md
+  #   - 实验步骤: 
+  #     - 练习1: lab2/step1.md
+  #     - 练习2: lab2/step2.md
+  #     - 练习3: lab2/step3.md
+  #   - 预习下一个实验: lab2/preview.md
+  # - 实验三:
+  #   - 实验概述: lab3/overview.md
+  #   - 实验原理: lab3/theory.md
+  #   - 实验步骤:
+  #     - 练习1: lab3/step1.md
+  #     - 练习2: lab3/step2.md
+  #     - 练习3: lab3/step3.md
+  #   - 预习下一个实验: lab3/preview.md
+  # - 实验四:
+  #   - 实验概述: lab4/overview.md
+  #   - 实验原理: lab4/theory.md
+  #   - 实验步骤: lab4/step.md
+  #   - 预习下一个实验: lab4/preview.md
+  # - 实验五:
+  #   - 实验概述: lab5/overview.md
+  #   - 实验原理: lab5/theory.md
+  #   - 实验步骤: lab5/step.md
+  # - 实验六:
+  #   - 实验概述: lab6/overview.md
+    # - 实验原理: lab6/theory.md
+    # - 实验步骤: lab6/step.md
+ 
