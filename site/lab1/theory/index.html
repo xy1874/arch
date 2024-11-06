@@ -481,11 +481,11 @@
         <li class="md-nav__item">
   <a href="#2-x86-64" class="md-nav__link">
     <span class="md-ellipsis">
-      2. X86-64简述
+      2. x86-64简述
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. X86-64简述">
+    <nav class="md-nav" aria-label="2. x86-64简述">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -523,11 +523,11 @@
         <li class="md-nav__item">
   <a href="#3-x87-fpu" class="md-nav__link">
     <span class="md-ellipsis">
-      3. X87 FPU
+      3. x87 FPU
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. X87 FPU">
+    <nav class="md-nav" aria-label="3. x87 FPU">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -757,11 +757,11 @@
         <li class="md-nav__item">
   <a href="#2-x86-64" class="md-nav__link">
     <span class="md-ellipsis">
-      2. X86-64简述
+      2. x86-64简述
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. X86-64简述">
+    <nav class="md-nav" aria-label="2. x86-64简述">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -799,11 +799,11 @@
         <li class="md-nav__item">
   <a href="#3-x87-fpu" class="md-nav__link">
     <span class="md-ellipsis">
-      3. X87 FPU
+      3. x87 FPU
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. X87 FPU">
+    <nav class="md-nav" aria-label="3. x87 FPU">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -858,11 +858,11 @@ C_{ij}=\sum_{k=1,2,⋯,K} A_{ik}⋅B_{kj}, \text{ } i=1,2,⋯,M; \text{ } j=1,2,
 <p>&emsp;&emsp;除了 <script type="math/tex">ijk</script> 遍历方式外，<script type="math/tex">kij</script> 遍历方式（也称秩 <script type="math/tex">K</script> 更新）的使用也较为普遍。不同于 <script type="math/tex">ijk</script> 遍历方式，使用 <script type="math/tex">kij</script> 遍历方式计算矩阵 <script type="math/tex">C</script> 时需要存中间结果。由图2-1可知，遍历矩阵 <script type="math/tex">A</script> 的一列和矩阵 <script type="math/tex">B</script> 的一行，只能得到矩阵 <script type="math/tex">C</script> 每个元素的一部分结果，只有当矩阵 <script type="math/tex">A</script> 和矩阵 <script type="math/tex">B</script> 的所有分块全遍历完时才能得到矩阵 <script type="math/tex">C</script> 的最终结果。相较于 <script type="math/tex">ijk</script> 遍历方式，<script type="math/tex">kij</script> 遍历方式能较好的保证空间访问的局部性，提高缓存的利用率。</p>
 <p><center><img src="../assets/2-1.png" width = 430></center>
 <center>图2-1 <script type="math/tex">kij</script> 遍历的矩阵乘法算法</center></p>
-<h2 id="2-x86-64">2. X86-64简述</h2>
-<p>&emsp;&emsp;X86-64是X86的64位扩展，其在保持良好兼容性的基础上将寄存器和虚拟地址空间扩展到64位，并提升了指令集的功能和性能。</p>
+<h2 id="2-x86-64">2. x86-64简述</h2>
+<p>&emsp;&emsp;x86-64是x86的64位扩展，其在保持良好兼容性的基础上将寄存器和虚拟地址空间扩展到64位，并提升了指令集的功能和性能。</p>
 <h3 id="21">2.1 寄存器概述</h3>
-<p>&emsp;&emsp;X86-64架构包含状态和控制寄存器、程序指针寄存器、通用寄存器、向量寄存器等多种类型的寄存器，如表2-1所示。</p>
-<p><center>表2-1 X86-64架构的部分寄存器</center>
+<p>&emsp;&emsp;x86-64架构包含状态和控制寄存器、程序指针寄存器、通用寄存器、向量寄存器等多种类型的寄存器，如表2-1所示。</p>
+<p><center>表2-1 x86-64架构的部分寄存器</center>
 <center><table>
     <tr>
         <th align="center">类型</th>
@@ -946,8 +946,8 @@ C_{ij}=\sum_{k=1,2,⋯,K} A_{ik}⋅B_{kj}, \text{ } i=1,2,⋯,M; \text{ } j=1,2,
     </tr>
 </table></center></p>
 <h3 id="22">2.2 寻址方式</h3>
-<p>&emsp;&emsp;X86-64架构的常用寻址方式包括立即数寻址、寄存器寻址、直接寻址、寄存器间接寻址、基址变址寻址和比例变址寻址，如表2-2所示。</p>
-<p><center>表2-2 X86-64架构的寻址方式</center>
+<p>&emsp;&emsp;x86-64架构的常用寻址方式包括立即数寻址、寄存器寻址、直接寻址、寄存器间接寻址、基址变址寻址和比例变址寻址，如表2-2所示。</p>
+<p><center>表2-2 x86-64架构的寻址方式</center>
 <center><table>
     <tr>
         <th align="center">寻址方式</th>
@@ -989,18 +989,18 @@ C_{ij}=\sum_{k=1,2,⋯,K} A_{ik}⋅B_{kj}, \text{ } i=1,2,⋯,M; \text{ } j=1,2,
 <p>&emsp;&emsp;由表2-2可知，直接寻址、寄存器间接寻址和基址变址寻址均可视为比例变址寻址的特殊情况。</p>
 <h3 id="23">2.3 常用指令</h3>
 <p><embed src = "../assets/x86-64-reference.pdf" width="100%" height="910"></p>
-<h2 id="3-x87-fpu">3. X87 FPU</h2>
+<h2 id="3-x87-fpu">3. x87 FPU</h2>
 <h3 id="31">3.1 寄存器概述</h3>
-<p>&emsp;&emsp;<a href="../assets/x87.pdf" target=_blank>X87 FPU浮点运算单元</a>包含8个80位的通用寄存器 <code>R0</code> ~ <code>R7</code>、3个16位的状态和控制寄存器、2个48位的指针寄存器以及1个11位的操作码寄存器，如图2-2所示。</p>
+<p>&emsp;&emsp;<a href="../assets/x87.pdf" target=_blank>x87 FPU浮点运算单元</a>包含8个80位的通用寄存器 <code>R0</code> ~ <code>R7</code>、3个16位的状态和控制寄存器、2个48位的指针寄存器以及1个11位的操作码寄存器，如图2-2所示。</p>
 <p><center><img src="../assets/2-2.png" width = 430></center>
-<center>图2-2 X87 FPU的寄存器</center></p>
+<center>图2-2 x87 FPU的寄存器</center></p>
 <p>&emsp;&emsp;其中，通用寄存器用于存储计算数据。数据被写入通用寄存器时将被FPU自动扩展至80位的双扩展精度浮点数（Double Extended-Precision Floating-Point）；而当通用寄存器中的数据被写入内存时，可以在不同精度的浮点数、整数或BCD码的多种格式当中灵活选择一种进行写入。</p>
-<p>&emsp;&emsp;X87 FPU指令支持以栈的形式访问8个通用寄存器，且处于栈顶的数据始终被标记为 <code>st(0)</code>，如图2-3中的 (a) ~ (d)；同时也支持通过相对 <code>st(0)</code> 的偏移量来访问任意一个通用寄存器，如图2-3中的 (e)。</p>
+<p>&emsp;&emsp;x87 FPU指令支持以栈的形式访问8个通用寄存器，且处于栈顶的数据始终被标记为 <code>st(0)</code>，如图2-3中的 (a) ~ (d)；同时也支持通过相对 <code>st(0)</code> 的偏移量来访问任意一个通用寄存器，如图2-3中的 (e)。</p>
 <p><center><img src="../assets/2-3.png" width = 600></center>
 <center>图2-3 通用寄存器访问示意图</center></p>
 <h3 id="32">3.2 常用指令</h3>
-<p>&emsp;&emsp;X87 FPU支持加载指令、存储指令和运算指令。加载指令将数据压入通用寄存器栈。存储指令将栈中数据弹出并存储到主存单元。运算指令实现浮点数据的加减乘除和求相反数等操作。</p>
-<p>&emsp;&emsp;X87 FPU指令的命令规则是前缀 <code>f</code> + 前缀 <code>i</code> (可选) + 操作 + 后缀 <code>p</code>/<code>s</code>/<code>l</code>/<code>t</code>(可选) 。其中，前缀 <code>i</code>、后缀 <code>s</code>/<code>l</code>/<code>t</code> 分别表示指令的操作数是整数、单精度浮点数、双精度浮点数和双扩展精度浮点数；后缀 <code>p</code> 表示执行该指令时需要在运算完成后从通用寄存器栈中弹出一个数据。例如，指令 <code>fistpl (%rax)</code> 表示将 <code>st(0)</code> 的数据转换成整数后存储到 <code>%rax</code> 寄存器指向的存储单元，并从FPU栈中弹出一个数据。</p>
+<p>&emsp;&emsp;x87 FPU支持加载指令、存储指令和运算指令。加载指令将数据压入通用寄存器栈。存储指令将栈中数据弹出并存储到主存单元。运算指令实现浮点数据的加减乘除和求相反数等操作。</p>
+<p>&emsp;&emsp;x87 FPU指令的命令规则是前缀 <code>f</code> + 前缀 <code>i</code> (可选) + 操作 + 后缀 <code>p</code>/<code>s</code>/<code>l</code>/<code>t</code>(可选) 。其中，前缀 <code>i</code>、后缀 <code>s</code>/<code>l</code>/<code>t</code> 分别表示指令的操作数是整数、单精度浮点数、双精度浮点数和双扩展精度浮点数；后缀 <code>p</code> 表示执行该指令时需要在运算完成后从通用寄存器栈中弹出一个数据。例如，指令 <code>fistpl (%rax)</code> 表示将 <code>st(0)</code> 的数据转换成整数后存储到 <code>%rax</code> 寄存器指向的存储单元，并从FPU栈中弹出一个数据。</p>
 <p><embed src = "../assets/x87-inst.pdf" width="100%" height="910"></p>
 
 
