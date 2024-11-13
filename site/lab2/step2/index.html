@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../step1/">
+      
+      
+        <link rel="next" href="../step3/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>练习2：利用循环和分块提升计算性能 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
+        <title>练习2 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
       
     
     
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              练习2：利用循环和分块提升计算性能
+              练习2
             
           </span>
         </div>
@@ -221,6 +225,26 @@
           
   
   实验一
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  实验二
 
         </a>
       </li>
@@ -595,6 +619,304 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验二
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            实验二
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            实验步骤
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    练习1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    练习2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    练习2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-lmbench3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 运行lmbench3工具查看目标处理器信息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-1prefetch0srclab2gemm_kernel_opt_prefetchsdo_gemm57" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 根据上一步获得的存储信息，为练习1的代码增加数据预取优化（如prefetch0指令），形成src/lab2/gemm_kernel_opt_prefetch.S中DO_GEMM过程（第57行）中的矩阵计算逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 验证kernel结果的正确性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    练习3 (选)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预习下一个实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -622,18 +944,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-1srclab2gemm_kernel_opt_loopsdo_gemm55" class="md-nav__link">
+  <a href="#1-lmbench3" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 根据练习1的分析结果，完善src/lab2/gemm_kernel_opt_loop.S中DO_GEMM过程（第55行）的矩阵计算逻辑
+      1. 运行lmbench3工具查看目标处理器信息
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-kernel" class="md-nav__link">
+  <a href="#2-1prefetch0srclab2gemm_kernel_opt_prefetchsdo_gemm57" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 验证kernel结果的正确性
+      2. 根据上一步获得的存储信息，为练习1的代码增加数据预取优化（如prefetch0指令），形成src/lab2/gemm_kernel_opt_prefetch.S中DO_GEMM过程（第57行）中的矩阵计算逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 验证kernel结果的正确性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性
     </span>
   </a>
   
@@ -654,39 +994,102 @@
                   
 
 
-<h1 id="2">练习2：利用循环和分块提升计算性能</h1>
+<h1 id="2">练习2：利用预取优化性能</h1>
 <ul>
 <li>
-<p><strong>任务</strong>：根据修改练习1提供的示例代码，设计恰当循环顺序和数量提升矩阵乘法性能。</p>
+<p><strong>任务</strong>：通过为练习1代码增加数据主动预取机制提升矩阵乘法性能。</p>
+</li>
+<li>
+<p><strong>子任务</strong>：</p>
+<ul>
+<li>利用<a href="https://sourceforge.net/p/lmbench/discussion/45564/thread/a8bb62f40d/?limit=25#6283/9602" target=_blank>lmbench3</a>获取各级缓存的访问延迟；  </li>
+<li>利用访问延迟信息为预取指令选择合适的位置。</li>
+</ul>
 </li>
 <li>
 <p><strong>目标</strong>：</p>
 <ul>
-<li>学会通过优化算法提高缓存命中率；  </li>
-<li>学会根据缓存大小优化矩阵乘法分块大小提升性能。</li>
+<li>学会查阅处理器生产商提供的<a href="https://www.intel.cn/content/www/cn/zh/content-details/782158/intel-64-and-ia-32-architectures-software-developer-s-manual-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html" target=_blank>软件开发手册</a>选取合适的指令（10.4.6节数据预取相关内容）；  </li>
+<li>学会在指令流中为数据预取指令选择合适的位置。</li>
 </ul>
 </li>
 </ul>
-<h4 id="1-1srclab2gemm_kernel_opt_loopsdo_gemm55">1. 根据练习1的分析结果，完善<code>src/lab2/gemm_kernel_opt_loop.S</code>中<code>DO_GEMM</code>过程（第55行）的矩阵计算逻辑</h4>
-<p><center><img src="../assets/3-2-1.png" width = 450></center></p>
-<h4 id="2-kernel">2. 验证kernel结果的正确性</h4>
+<h4 id="1-lmbench3">1. 运行<code>lmbench3</code>工具查看目标处理器信息</h4>
+<p>&emsp;&emsp;注意：需多次运行取均值，单次运行时间约7小时，请合理安排重试次数。</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>tools<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>xf<span class="w"> </span>lmbench.tgz<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>lmbench
+make<span class="w"> </span>results
+<span class="c1"># 涉及的参数选择 </span>
+<span class="c1"># MULTIPLE COPIES [default 1] 回车</span>
+<span class="c1"># Job placement selection: 4</span>
+<span class="c1"># MB [default 10956] 回车</span>
+<span class="c1"># SUBSET (ALL|HARWARE|OS|DEVELOPMENT) [default all] HARWARE</span>
+<span class="c1"># FASTMEM [default no] 回车</span>
+<span class="c1"># SLOWFS [default no] yes</span>
+<span class="c1"># DISKS [default none] 回车</span>
+<span class="c1"># REMOTE [default none] 回车</span>
+<span class="c1"># Processor mhz [default 2688 MHz, 0.3720 nanosec clock] 回车</span>
+<span class="c1"># FSDIR [default /var/tmp] 回车</span>
+<span class="c1"># Status output file [default /dev/tty] /tmp/lmbench.test</span>
+<span class="c1"># Mail results [default yes] no</span>
+
+<span class="c1"># 因为LMBENCH3对新系统的兼容问题，选择完后很快会失败，按下面的步骤继续操作即可</span>
+cp<span class="w"> </span>-a<span class="w"> </span>results<span class="w"> </span>./bin/
+make<span class="w"> </span>rerun
+
+<span class="c1"># 等待运行结束</span>
+mv<span class="w"> </span>results<span class="w"> </span>results.bak
+cp<span class="w"> </span>-a<span class="w"> </span>./bin/results<span class="w"> </span>./
+<span class="c1"># 查看延迟信息（如果不够详细可以自行调整make results参数再进行测试）</span>
+<span class="nb">cd</span><span class="w"> </span>results<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span><span class="nv">LIST</span><span class="o">=</span><span class="k">$(</span>../scripts/os<span class="k">)</span>/*
+</code></pre></div></td></tr></table></div>
+<p><center><img src="../assets/3-3-1.png" width = 100%></center></p>
+<p>&emsp;&emsp;在<code>tools目录</code>下可以找到“<code>10.251.137.194.0</code>”文件，这是<code>make results</code>指令的输出文件，根据上述的指令将其放入正确位置并执行<code>make rerun</code>之后的步骤即可。</p>
+<h4 id="2-1prefetch0srclab2gemm_kernel_opt_prefetchsdo_gemm57">2. 根据上一步获得的存储信息，为练习1的代码增加数据预取优化（如<code>prefetch0</code>指令），形成<code>src/lab2/gemm_kernel_opt_prefetch.S</code>中<code>DO_GEMM</code>过程（第57行）中的矩阵计算逻辑</h4>
+<p><center><img src="../assets/3-3-2.png" width = 480></center></p>
+<h4 id="3-kernel">3. 验证kernel结果的正确性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 项目根目录下执行</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 项目根目录下执行</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab2_gemm_kernel_opt_loop.unittest
-<span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_kernel_opt_loop.unittest
+cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab2_gemm_kernel_opt_prefetch.unittest
+
+<span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_kernel_opt_prefetch.unittest
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-2-2.png" width = 530></center></p>
-<p>&emsp;&emsp;对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性。</p>
+<p><center><img src="../assets/3-3-3.png" width = 550></center></p>
+<h4 id="4">4. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
-cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab2_gemm_opt_loop
-<span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_opt_loop<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">32768</span><span class="w"> </span><span class="m">4</span>
+cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab2_gemm_opt_prefetch
+<span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_opt_prefetch<span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="m">4</span>
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-2-3.png" width = 650></center></p>
+<p><center><img src="../assets/3-3-4.png" width = 550></center></p>
 
 
 
