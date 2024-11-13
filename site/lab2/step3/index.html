@@ -976,7 +976,7 @@
 </li>
 </ul>
 <h4 id="1-1srclab2gemm_kernel_opt_loopsdo_gemm55">1. 根据练习1的分析结果，完善<code>src/lab2/gemm_kernel_opt_loop.S</code>中<code>DO_GEMM</code>过程（第55行）的矩阵计算逻辑</h4>
-<p><center><img src="../assets/3-2-1.png" width = 450></center></p>
+<p><center><img src="../assets/3-3-1.png" width = 450></center></p>
 <h4 id="2-kernel">2. 验证kernel结果的正确性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -986,7 +986,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </s
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab2_gemm_kernel_opt_loop.unittest
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_kernel_opt_loop.unittest
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-2-2.png" width = 530></center></p>
+<p><center><img src="../assets/3-3-2.png" width = 530></center></p>
 <p>&emsp;&emsp;对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性。</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -994,7 +994,7 @@ cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab2_gemm_opt_loop
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_opt_loop<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">32768</span><span class="w"> </span><span class="m">4</span>
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-2-3.png" width = 650></center></p>
+<p><center><img src="../assets/3-3-3.png" width = 650></center></p>
 
 
 

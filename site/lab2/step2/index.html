@@ -1066,10 +1066,10 @@ cp<span class="w"> </span>-a<span class="w"> </span>./bin/results<span class="w"
 <span class="c1"># 查看延迟信息（如果不够详细可以自行调整make results参数再进行测试）</span>
 <span class="nb">cd</span><span class="w"> </span>results<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span><span class="nv">LIST</span><span class="o">=</span><span class="k">$(</span>../scripts/os<span class="k">)</span>/*
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-3-1.png" width = 100%></center></p>
+<p><center><img src="../assets/3-2-1.png" width = 100%></center></p>
 <p>&emsp;&emsp;在<code>tools目录</code>下可以找到“<code>10.251.137.194.0</code>”文件，这是<code>make results</code>指令的输出文件，根据上述的指令将其放入正确位置并执行<code>make rerun</code>之后的步骤即可。</p>
 <h4 id="2-1prefetch0srclab2gemm_kernel_opt_prefetchsdo_gemm57">2. 根据上一步获得的存储信息，为练习1的代码增加数据预取优化（如<code>prefetch0</code>指令），形成<code>src/lab2/gemm_kernel_opt_prefetch.S</code>中<code>DO_GEMM</code>过程（第57行）中的矩阵计算逻辑</h4>
-<p><center><img src="../assets/3-3-2.png" width = 480></center></p>
+<p><center><img src="../assets/3-2-2.png" width = 480></center></p>
 <h4 id="3-kernel">3. 验证kernel结果的正确性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1081,7 +1081,7 @@ cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>
 
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_kernel_opt_prefetch.unittest
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-3-3.png" width = 550></center></p>
+<p><center><img src="../assets/3-2-3.png" width = 550></center></p>
 <h4 id="4">4. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1089,7 +1089,7 @@ cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab2_gemm_opt_prefetch
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab2_gemm_opt_prefetch<span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="m">128</span><span class="w"> </span><span class="m">4</span>
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-3-4.png" width = 550></center></p>
+<p><center><img src="../assets/3-2-4.png" width = 550></center></p>
 
 
 
