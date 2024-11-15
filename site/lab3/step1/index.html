@@ -862,27 +862,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-srclab3gemm_kernel_baselinesdo_loop_n2srclab3gemm_kernel_opt_loop_unrollings55" class="md-nav__link">
+  <a href="#1-srclab3gemm_kernel_opt_loop_unrollings83amkbkn1-st0" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 对src/lab3/gemm_kernel_baseline.S中的DO_LOOP_N逻辑进行循环展开（展开度需大于等于2），将展开后的逻辑填入src/lab3/gemm_kernel_opt_loop_unrolling.S中指定位置（第55行）
+      1. 在src/lab3/gemm_kernel_opt_loop_unrolling.S第83行添加计算A[m][k]*B[k][n+1]-&gt;st(0)的逻辑
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-srclab3gemm_kernel_opt_loop_unrollings91cmn-st1-cmn1-st0" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 验证循环展开方案的正确性
+      2. 在src/lab3/gemm_kernel_opt_loop_unrolling.S第91行添加加载C[m][n]-&gt;st(1)和加载 C[m][n+1]-&gt;st(0)的逻辑
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-srclab3gemm_kernel_opt_loop_unrollings93-cmn1-amk-bkn1-cmn-amk-bkn" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性
+      3. 在src/lab3/gemm_kernel_opt_loop_unrolling.S第93行添加部分和累加逻辑: C[m][n+1] + A[m][k] * B[k][n+1] 和 C[m][n] + A[m][k] * B[k][n]
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-srclab3gemm_kernel_opt_loop_unrollings97cmn" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 在src/lab3/gemm_kernel_opt_loop_unrolling.S第97行添加保存C[m][n]的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-srclab3gemm_kernel_opt_loop_unrollings99n" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 在src/lab3/gemm_kernel_opt_loop_unrolling.S第99行添加N维度的循环更新逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 验证循环展开方案的正确性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性
     </span>
   </a>
   
@@ -913,16 +949,24 @@
 <ul>
 <li>使用<code>FLD</code>、<code>FSTP</code>等指令操作数据的读取与存储；  </li>
 <li>使用<code>FMULP</code>、<code>FADDP</code>等x87 FPU提供的指令进行计算；  </li>
-<li>至少有一个循环的展开度为2。</li>
+<li>以2为步进对 <script type="math/tex">N</script> 维度的循环进行展开（可参考<code>src/lab3/gemm_kernel_baseline.S</code>中的 <code>DO_LOOP_N</code> 逻辑）</li>
 </ul>
 </li>
 <li>
 <p><strong>目标</strong>：学会利用计算单元的特性进行循环展开。</p>
 </li>
 </ul>
-<h4 id="1-srclab3gemm_kernel_baselinesdo_loop_n2srclab3gemm_kernel_opt_loop_unrollings55">1. 对<code>src/lab3/gemm_kernel_baseline.S</code>中的<code>DO_LOOP_N</code>逻辑进行循环展开（展开度需大于等于2），将展开后的逻辑填入<code>src/lab3/gemm_kernel_opt_loop_unrolling.S</code>中指定位置（第55行）</h4>
-<p><center><img src="../assets/3-1-1.png" width = 500></center></p>
-<h4 id="2">2. 验证循环展开方案的正确性</h4>
+<h4 id="1-srclab3gemm_kernel_opt_loop_unrollings83amkbkn1-st0">1. 在<code>src/lab3/gemm_kernel_opt_loop_unrolling.S</code>第83行添加计算<code>A[m][k]*B[k][n+1]-&gt;st(0)</code>的逻辑</h4>
+<p><center><img src="../assets/3-1-1.png" width = 650></center></p>
+<h4 id="2-srclab3gemm_kernel_opt_loop_unrollings91cmn-st1-cmn1-st0">2. 在<code>src/lab3/gemm_kernel_opt_loop_unrolling.S</code>第91行添加加载<code>C[m][n]-&gt;st(1)</code>和加载 <code>C[m][n+1]-&gt;st(0)</code>的逻辑</h4>
+<p><center><img src="../assets/3-1-2.png" width = 650></center></p>
+<h4 id="3-srclab3gemm_kernel_opt_loop_unrollings93-cmn1-amk-bkn1-cmn-amk-bkn">3. 在<code>src/lab3/gemm_kernel_opt_loop_unrolling.S</code>第93行添加部分和累加逻辑: <code>C[m][n+1] + A[m][k] * B[k][n+1]</code> 和 <code>C[m][n] + A[m][k] * B[k][n]</code></h4>
+<p><center><img src="../assets/3-1-3.png" width = 650></center></p>
+<h4 id="4-srclab3gemm_kernel_opt_loop_unrollings97cmn">4. 在<code>src/lab3/gemm_kernel_opt_loop_unrolling.S</code>第97行添加保存<code>C[m][n]</code>的逻辑</h4>
+<p><center><img src="../assets/3-1-4.png" width = 650></center></p>
+<h4 id="5-srclab3gemm_kernel_opt_loop_unrollings99n">5. 在<code>src/lab3/gemm_kernel_opt_loop_unrolling.S</code>第99行添加N维度的循环更新逻辑</h4>
+<p><center><img src="../assets/3-1-5.png" width = 650></center></p>
+<h4 id="6">6. 验证循环展开方案的正确性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -931,15 +975,15 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </s
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab3_gemm_opt_loop_unrolling.unittest
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab3_gemm_opt_loop_unrolling.unittest
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-1-2.png" width = 600></center></p>
-<h4 id="3">3. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性</h4>
+<p><center><img src="../assets/3-1-6.png" width = 600></center></p>
+<h4 id="7">7. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据对比结果分析优化方案的局限性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab3_gemm_opt_loop_unrolling
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab3_gemm_opt_loop_unrolling<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span>
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-1-3.png" width = 600></center></p>
+<p><center><img src="../assets/3-1-7.png" width = 600></center></p>
 
 
 

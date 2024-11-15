@@ -862,27 +862,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-avxsrclab3gemm_kernel_opt_avxs75" class="md-nav__link">
+  <a href="#1-srclab3gemm_kernel_opt_avxs110117cmm2nn32avx" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 按上述的子任务要求，利用AVX指令实现性能更高的矩阵乘法内核，并将逻辑填入src/lab3/gemm_kernel_opt_avx.S中的指定位置（第75行）
+      1. 在src/lab3/gemm_kernel_opt_avx.S第110行、第117行添加加载C[m:m+2][n:n+32]到AVX寄存器的逻辑
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-srclab3gemm_kernel_opt_avxs90am1kk8avx" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 验证新内核的正确性
+      2. 在src/lab3/gemm_kernel_opt_avx.S第90行添加加载A[m+1][k:k+8]到AVX寄存器的逻辑
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-srclab3gemm_kernel_opt_avxs96bknn32avx" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据算法和结果分析优化方案的优缺点。
+      3. 在src/lab3/gemm_kernel_opt_avx.S第96行添加加载B[k][n:n+32]到AVX寄存器的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-srclab3gemm_kernel_opt_avxs141cmm2nn32amm2kk8bkk8nn32" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 在src/lab3/gemm_kernel_opt_avx.S第141行添加计算C[m:m+2][n:n+32]+=A[m:m+2][k:k+8]*B[k:k+8][n:n+32]的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-srclab3gemm_kernel_opt_avxs132135cmnn32cm1nn32" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 在src/lab3/gemm_kernel_opt_avx.S第132行、第135行添加保存C[m][n:n+32]和C[m+1][n:n+32]的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 验证新内核的正确性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据算法和结果分析优化方案的优缺点。
     </span>
   </a>
   
@@ -913,18 +949,24 @@
 <ul>
 <li>计算内核 <script type="math/tex">C</script> 矩阵（<script type="math/tex">C_r</script>）的元素个数不少于64，即 <script type="math/tex">{m_r}{n_r} ≥ 64</script>；  </li>
 <li>计算内核各维度必须满足如下要求: <script type="math/tex">m_r mod 2=0</script>，<script type="math/tex">k_r mod 8=0</script>，<script type="math/tex">n_r mod 8=0</script>；  </li>
-<li>计算内核采用流水线设计读取、计算、写回等过程；  </li>
-<li>计算内核采用预取优化数据读取和写回；  </li>
-<li>使用的AVX寄存器为<code>ymm0</code> ~ <code>ymm16</code>。</li>
+<li>计算内核采用流水线设计读取、计算、写回等过程。</li>
 </ul>
 </li>
 <li>
 <p><strong>目标</strong>：学会利用向量指令实现计算性能更高的矩阵乘法计算单元。</p>
 </li>
 </ul>
-<h4 id="1-avxsrclab3gemm_kernel_opt_avxs75">1. 按上述的子任务要求，利用AVX指令实现性能更高的矩阵乘法内核，并将逻辑填入<code>src/lab3/gemm_kernel_opt_avx.S</code>中的指定位置（第75行）</h4>
-<p><center><img src="../assets/3-2-1.png" width = 400></center></p>
-<h4 id="2">2. 验证新内核的正确性</h4>
+<h4 id="1-srclab3gemm_kernel_opt_avxs110117cmm2nn32avx">1. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第110行、第117行添加加载<code>C[m:m+2][n:n+32]</code>到AVX寄存器的逻辑</h4>
+<p><center><img src="../assets/3-2-1.png" width = 650></center></p>
+<h4 id="2-srclab3gemm_kernel_opt_avxs90am1kk8avx">2. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第90行添加加载<code>A[m+1][k:k+8]</code>到AVX寄存器的逻辑</h4>
+<p><center><img src="../assets/3-2-2.png" width = 650></center></p>
+<h4 id="3-srclab3gemm_kernel_opt_avxs96bknn32avx">3. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第96行添加加载<code>B[k][n:n+32]</code>到AVX寄存器的逻辑</h4>
+<p><center><img src="../assets/3-2-3.png" width = 650></center></p>
+<h4 id="4-srclab3gemm_kernel_opt_avxs141cmm2nn32amm2kk8bkk8nn32">4. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第141行添加计算<code>C[m:m+2][n:n+32]+=A[m:m+2][k:k+8]*B[k:k+8][n:n+32]</code>的逻辑</h4>
+<p><center><img src="../assets/3-2-4.png" width = 650></center></p>
+<h4 id="5-srclab3gemm_kernel_opt_avxs132135cmnn32cm1nn32">5. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第132行、第135行添加保存<code>C[m][n:n+32]</code>和<code>C[m+1][n:n+32]</code>的逻辑</h4>
+<p><center><img src="../assets/3-2-5.png" width = 650></center></p>
+<h4 id="6">6. 验证新内核的正确性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -933,15 +975,15 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </s
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab3_gemm_opt_avx.unittest
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab3_gemm_opt_avx.unittest
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-2-2.png" width = 600></center></p>
-<h4 id="3">3. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据算法和结果分析优化方案的优缺点。</h4>
+<p><center><img src="../assets/3-2-6.png" width = 600></center></p>
+<h4 id="7">7. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据算法和结果分析优化方案的优缺点。</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab3_gemm_opt_avx
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab3_gemm_opt_avx<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span>
 </code></pre></div></td></tr></table></div>
-<p><center><img src="../assets/3-2-3.png" width = 620></center></p>
+<p><center><img src="../assets/3-2-7.png" width = 620></center></p>
 
 
 
