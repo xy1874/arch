@@ -976,6 +976,7 @@ cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>
 <span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab3_gemm_opt_avx.unittest
 </code></pre></div></td></tr></table></div>
 <p><center><img src="../assets/3-2-6.png" width = 600></center></p>
+<p>&emsp;&emsp;若编译时提示.cpp文件报错，则点击下载<a href="http://10.249.10.96:3011/gemm_kernel_opt_prefetch.cpp" target=_blank>gemm_kernel_opt_prefetch.cpp</a>和<a href="http://10.249.10.96:3011/gemm_kernel_opt_loop.cpp" target=_blank>gemm_kernel_opt_loop.cpp</a>，将其拷贝并替换掉<code>src/lab3/</code>目录下的原有文件，再重新编译。</p>
 <h4 id="7">7. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据算法和结果分析优化方案的优缺点。</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
