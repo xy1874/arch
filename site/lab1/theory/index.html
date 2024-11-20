@@ -252,6 +252,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lab3/overview/" class="md-tabs__link">
+          
+  
+  实验三
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -961,6 +979,228 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验三
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            实验三
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            实验步骤
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/step1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    练习1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/step2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    练习2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/step3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    练习3 (选)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab3/preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预习下一个实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1235,7 +1475,18 @@ C_{ij}=\sum_{k=1,2,⋯,K} A_{ik}⋅B_{kj}, \text{ } i=1,2,⋯,M; \text{ } j=1,2,
 <center>图2-3 通用寄存器访问示意图</center></p>
 <h3 id="32">3.2 常用指令</h3>
 <p>&emsp;&emsp;x87 FPU支持加载指令、存储指令和运算指令。加载指令将数据压入通用寄存器栈。存储指令将栈中数据弹出并存储到主存单元。运算指令实现浮点数据的加减乘除和求相反数等操作。</p>
-<p>&emsp;&emsp;x87 FPU指令的命令规则是前缀 <code>f</code> + 前缀 <code>i</code> (可选) + 操作 + 后缀 <code>p</code>/<code>s</code>/<code>l</code>/<code>t</code>(可选) 。其中，前缀 <code>i</code>、后缀 <code>s</code>/<code>l</code>/<code>t</code> 分别表示指令的操作数是整数、单精度浮点数、双精度浮点数和双扩展精度浮点数；后缀 <code>p</code> 表示执行该指令时需要在运算完成后从通用寄存器栈中弹出一个数据。例如，指令 <code>fistpl (%rax)</code> 表示将 <code>st(0)</code> 的数据转换成整数后存储到 <code>%rax</code> 寄存器指向的存储单元，并从FPU栈中弹出一个数据。</p>
+<p>&emsp;&emsp;x87 FPU指令的命令规则是前缀 <code>f</code> + 前缀 <code>i</code> (可选) + 操作 + 后缀 <code>p</code>/<code>s</code>/<code>l</code>/<code>t</code>(可选) 。其中，前缀 <code>i</code>、后缀 <code>s</code>/<code>l</code>/<code>t</code> 分别表示指令的操作数是整数、单精度浮点数、双精度浮点数和双扩展精度浮点数；后缀 <code>p</code> 表示执行该指令时需要在运算完成后从通用寄存器栈中弹出一个数据。</p>
+<div class="admonition example">
+<p class="admonition-title">x87指令示例</p>
+<ul>
+<li>
+<p>例1：<code>fistpl (%rax)</code> 表示将 <code>st(0)</code> 中的双精度浮点数转换成整数后存储到 <code>%rax</code> 寄存器指向的存储单元，并从FPU栈中弹出一个数据。</p>
+</li>
+<li>
+<p>例2：<code>faddp %st(3), %st(0)</code> 表示将 <code>st(3) + st(0)</code> 的计算结果保存在 <code>st(3)</code>，然后把 <code>st(0)</code> 弹栈。</p>
+</li>
+</ul>
+</div>
 <p><embed src = "../assets/x87-inst.pdf" width="100%" height="910"></p>
 
 

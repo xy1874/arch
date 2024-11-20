@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../step1/">
+      
+      
+        <link rel="next" href="../step3/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>练习2：基于AVX指令设计并实现高性能矩阵乘法计算内核 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
+        <title>练习2 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
       
     
     
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              练习2：基于AVX指令设计并实现高性能矩阵乘法计算内核
+              练习2
             
           </span>
         </div>
@@ -239,6 +243,26 @@
           
   
   实验二
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  实验三
 
         </a>
       </li>
@@ -835,6 +859,340 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验三
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            实验三
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            实验步骤
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    练习1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    练习2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    练习2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-srclab3gemm_kernel_opt_avxs" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. 模板代码src/lab3/gemm_kernel_opt_avx.S的实现思路
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-srclab3gemm_kernel_opt_avxsload_mat_c110117cmm2nn32avx" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 为src/lab3/gemm_kernel_opt_avx.S的LOAD_MAT_C过程（第110行、第117行）添加加载C[m:m+2][n:n+32]到AVX寄存器的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-srclab3gemm_kernel_opt_avxsload_mat_a90am1kavx" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 为src/lab3/gemm_kernel_opt_avx.S的LOAD_MAT_A过程（第90行）添加加载A[m+1][k]到AVX寄存器的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-srclab3gemm_kernel_opt_avxsload_mat_b96bknn32avx" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 为src/lab3/gemm_kernel_opt_avx.S的LOAD_MAT_B过程（第96行）添加加载B[k][n:n+32]到AVX寄存器的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-srclab3gemm_kernel_opt_avxsdo_compute141cmm2nn32amm2kbkk8nn32" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 为src/lab3/gemm_kernel_opt_avx.S的DO_COMPUTE过程（第141行）添加计算C[m:m+2][n:n+32]+=A[m:m+2][k]*B[k:k+8][n:n+32]的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-srclab3gemm_kernel_opt_avxsstore_mat_c132135cmnn32cm1nn32" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 为src/lab3/gemm_kernel_opt_avx.S的STORE_MAT_C过程（第132行、第135行）添加保存C[m][n:n+32]和C[m+1][n:n+32]的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 验证新内核的正确性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据算法和结果分析优化方案的优缺点。
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    练习3 (选)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预习下一个实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -862,45 +1220,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-srclab3gemm_kernel_opt_avxs110117cmm2nn32avx" class="md-nav__link">
+  <a href="#0-srclab3gemm_kernel_opt_avxs" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 在src/lab3/gemm_kernel_opt_avx.S第110行、第117行添加加载C[m:m+2][n:n+32]到AVX寄存器的逻辑
+      0. 模板代码src/lab3/gemm_kernel_opt_avx.S的实现思路
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-srclab3gemm_kernel_opt_avxs90am1kk8avx" class="md-nav__link">
+  <a href="#1-srclab3gemm_kernel_opt_avxsload_mat_c110117cmm2nn32avx" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 在src/lab3/gemm_kernel_opt_avx.S第90行添加加载A[m+1][k:k+8]到AVX寄存器的逻辑
+      1. 为src/lab3/gemm_kernel_opt_avx.S的LOAD_MAT_C过程（第110行、第117行）添加加载C[m:m+2][n:n+32]到AVX寄存器的逻辑
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-srclab3gemm_kernel_opt_avxs96bknn32avx" class="md-nav__link">
+  <a href="#2-srclab3gemm_kernel_opt_avxsload_mat_a90am1kavx" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 在src/lab3/gemm_kernel_opt_avx.S第96行添加加载B[k][n:n+32]到AVX寄存器的逻辑
+      2. 为src/lab3/gemm_kernel_opt_avx.S的LOAD_MAT_A过程（第90行）添加加载A[m+1][k]到AVX寄存器的逻辑
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-srclab3gemm_kernel_opt_avxs141cmm2nn32amm2kk8bkk8nn32" class="md-nav__link">
+  <a href="#3-srclab3gemm_kernel_opt_avxsload_mat_b96bknn32avx" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 在src/lab3/gemm_kernel_opt_avx.S第141行添加计算C[m:m+2][n:n+32]+=A[m:m+2][k:k+8]*B[k:k+8][n:n+32]的逻辑
+      3. 为src/lab3/gemm_kernel_opt_avx.S的LOAD_MAT_B过程（第96行）添加加载B[k][n:n+32]到AVX寄存器的逻辑
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-srclab3gemm_kernel_opt_avxs132135cmnn32cm1nn32" class="md-nav__link">
+  <a href="#4-srclab3gemm_kernel_opt_avxsdo_compute141cmm2nn32amm2kbkk8nn32" class="md-nav__link">
     <span class="md-ellipsis">
-      5. 在src/lab3/gemm_kernel_opt_avx.S第132行、第135行添加保存C[m][n:n+32]和C[m+1][n:n+32]的逻辑
+      4. 为src/lab3/gemm_kernel_opt_avx.S的DO_COMPUTE过程（第141行）添加计算C[m:m+2][n:n+32]+=A[m:m+2][k]*B[k:k+8][n:n+32]的逻辑
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-srclab3gemm_kernel_opt_avxsstore_mat_c132135cmnn32cm1nn32" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 为src/lab3/gemm_kernel_opt_avx.S的STORE_MAT_C过程（第132行、第135行）添加保存C[m][n:n+32]和C[m+1][n:n+32]的逻辑
     </span>
   </a>
   
@@ -956,15 +1323,19 @@
 <p><strong>目标</strong>：学会利用向量指令实现计算性能更高的矩阵乘法计算单元。</p>
 </li>
 </ul>
-<h4 id="1-srclab3gemm_kernel_opt_avxs110117cmm2nn32avx">1. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第110行、第117行添加加载<code>C[m:m+2][n:n+32]</code>到AVX寄存器的逻辑</h4>
+<h4 id="0-srclab3gemm_kernel_opt_avxs">0. 模板代码<code>src/lab3/gemm_kernel_opt_avx.S</code>的实现思路</h4>
+<p>&emsp;&emsp;模板代码<code>src/lab3/gemm_kernel_opt_avx.S</code>采用如下图所示的矩阵分块算法：</p>
+<p><center><img src="../assets/3-2-0.png" width = 100%></center></p>
+<p>&emsp;&emsp;最内层循环每次使用 <script type="math/tex">2 \times1 </script> 的<code>A[m:m+2][k]</code>分块和 <script type="math/tex">1 \times 32</script> 的<code>B[k][n:n+32]</code>分块计算出 <script type="math/tex">2 \times 32</script> 的<code>C[m:m+2][n:n+32]</code>分块。最内层的分块矩阵乘法采用 AVX 向量指令实现并行计算。</p>
+<h4 id="1-srclab3gemm_kernel_opt_avxsload_mat_c110117cmm2nn32avx">1. 为<code>src/lab3/gemm_kernel_opt_avx.S</code>的<code>LOAD_MAT_C</code>过程（第110行、第117行）添加加载<code>C[m:m+2][n:n+32]</code>到AVX寄存器的逻辑</h4>
 <p><center><img src="../assets/3-2-1.png" width = 650></center></p>
-<h4 id="2-srclab3gemm_kernel_opt_avxs90am1kk8avx">2. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第90行添加加载<code>A[m+1][k:k+8]</code>到AVX寄存器的逻辑</h4>
+<h4 id="2-srclab3gemm_kernel_opt_avxsload_mat_a90am1kavx">2. 为<code>src/lab3/gemm_kernel_opt_avx.S</code>的<code>LOAD_MAT_A</code>过程（第90行）添加加载<code>A[m+1][k]</code>到AVX寄存器的逻辑</h4>
 <p><center><img src="../assets/3-2-2.png" width = 650></center></p>
-<h4 id="3-srclab3gemm_kernel_opt_avxs96bknn32avx">3. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第96行添加加载<code>B[k][n:n+32]</code>到AVX寄存器的逻辑</h4>
+<h4 id="3-srclab3gemm_kernel_opt_avxsload_mat_b96bknn32avx">3. 为<code>src/lab3/gemm_kernel_opt_avx.S</code>的<code>LOAD_MAT_B</code>过程（第96行）添加加载<code>B[k][n:n+32]</code>到AVX寄存器的逻辑</h4>
 <p><center><img src="../assets/3-2-3.png" width = 650></center></p>
-<h4 id="4-srclab3gemm_kernel_opt_avxs141cmm2nn32amm2kk8bkk8nn32">4. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第141行添加计算<code>C[m:m+2][n:n+32]+=A[m:m+2][k:k+8]*B[k:k+8][n:n+32]</code>的逻辑</h4>
+<h4 id="4-srclab3gemm_kernel_opt_avxsdo_compute141cmm2nn32amm2kbkk8nn32">4. 为<code>src/lab3/gemm_kernel_opt_avx.S</code>的<code>DO_COMPUTE</code>过程（第141行）添加计算<code>C[m:m+2][n:n+32]+=A[m:m+2][k]*B[k:k+8][n:n+32]</code>的逻辑</h4>
 <p><center><img src="../assets/3-2-4.png" width = 650></center></p>
-<h4 id="5-srclab3gemm_kernel_opt_avxs132135cmnn32cm1nn32">5. 在<code>src/lab3/gemm_kernel_opt_avx.S</code>第132行、第135行添加保存<code>C[m][n:n+32]</code>和<code>C[m+1][n:n+32]</code>的逻辑</h4>
+<h4 id="5-srclab3gemm_kernel_opt_avxsstore_mat_c132135cmnn32cm1nn32">5. 为<code>src/lab3/gemm_kernel_opt_avx.S</code>的<code>STORE_MAT_C</code>过程（第132行、第135行）添加保存<code>C[m][n:n+32]</code>和<code>C[m+1][n:n+32]</code>的逻辑</h4>
 <p><center><img src="../assets/3-2-5.png" width = 650></center></p>
 <h4 id="6">6. 验证新内核的正确性</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -973,16 +1344,15 @@
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># 项目根目录下执行</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab3_gemm_opt_avx.unittest
-<span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab3_gemm_opt_avx.unittest
+./dist/bins/lab3_gemm_opt_avx.unittest
 </code></pre></div></td></tr></table></div>
 <p><center><img src="../assets/3-2-6.png" width = 600></center></p>
-<p>&emsp;&emsp;若编译时提示.cpp文件报错，则点击下载<a href="http://10.249.10.96:3011/gemm_kernel_opt_prefetch.cpp" target=_blank>gemm_kernel_opt_prefetch.cpp</a>和<a href="http://10.249.10.96:3011/gemm_kernel_opt_loop.cpp" target=_blank>gemm_kernel_opt_loop.cpp</a>，将其拷贝并替换掉<code>src/lab3/</code>目录下的原有文件，再重新编译。</p>
 <h4 id="7">7. 对比优化后的算法与基线的性能（测试用例根据自己的优化选择），根据算法和结果分析优化方案的优缺点。</h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 cmake<span class="w"> </span>-B<span class="w"> </span>.<span class="w"> </span>-S<span class="w"> </span>../<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cmake<span class="w"> </span>--build<span class="w"> </span>./<span class="w"> </span>--target<span class="w"> </span>lab3_gemm_opt_avx
-<span class="nb">cd</span><span class="w"> </span>dist/bins<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>./lab3_gemm_opt_avx<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span>
+./dist/bins/lab3_gemm_opt_avx<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="m">256</span>
 </code></pre></div></td></tr></table></div>
 <p><center><img src="../assets/3-2-7.png" width = 620></center></p>
 
