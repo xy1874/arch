@@ -93,6 +93,7 @@ nav:
       - 练习1: lab3/step1.md
       - 练习2: lab3/step2.md
       - 练习3 (选): lab3/step3.md
+    - 实验报告要求: lab3/report.md
     - 预习下一个实验: lab3/preview.md
   # - 实验四:
   #   - 实验概述: lab4/overview.md
@@ -107,4 +108,3 @@ nav:
   #   - 实验概述: lab6/overview.md
     # - 实验原理: lab6/theory.md
     # - 实验步骤: lab6/step.md
- 
