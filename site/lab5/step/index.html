@@ -16,7 +16,7 @@
     
     
       
-        <title>练习：利用共享内存提升计算性能 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
+        <title>Step - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#0-matrix_mulcu22" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              练习：利用共享内存提升计算性能
+              Step
             
           </span>
         </div>
@@ -257,6 +257,24 @@
           
   
   实验三
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lab4/overview/" class="md-tabs__link">
+          
+  
+  实验四
 
         </a>
       </li>
@@ -1096,6 +1114,139 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验四
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            实验四
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/step/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab4/preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预习下一个实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1113,8 +1264,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1123,36 +1272,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-matrix_mulcu15matrixmulsharedmemkernel65-astytx-bstytx" class="md-nav__link">
+  <a href="#0-matrix_mulcu22" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 与实验四文件相同，打开实验代码matrix_mul.cu，在第15行MatrixMulSharedMemKernel函数中补全共享内存优化矩阵乘法的代码。在第65行，实现每个线程加载一个元素到共享内存中 As[ty][tx] 或 Bs[ty][tx]，注意边界条件判断，避免访问越界导致计算结果有误
+      0. 复制以下代码，粘贴到实验四的matrix_mul.cu文件的第22行：
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-csub77for-loop-as-bs-csub" class="md-nav__link">
+  <a href="#1-matrixmulsharedmemkernel69abastytxbstytx" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 继续补全实验代码，计算线程负责的子矩阵元素Csub的累加值（第77行）。遍历（for loop）共享内存，将矩阵 As和矩阵 Bs 的对应元素相乘并累加到 Csub 中
+      1. 补全MatrixMulSharedMemKernel函数的共享内存优化矩阵乘法的代码。在第69行，实现每个线程分别加载矩阵A、B的一个元素到共享内存的As[ty][tx]、Bs[ty][tx]中，注意边界条件判断，避免访问越界导致计算结果有误
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-c-bx-by-tx-ty-c-c" class="md-nav__link">
+  <a href="#2-csub81forc-asbscsub" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 将结果写回矩阵C。使用块索引 (bx, by) 和线程索引 (tx, ty) 计算矩阵 C 中的全局位置。写入全局内存之前，务必检查全局索引是否在矩阵 C 的有效范围内，以避免越界访问
+      2. 继续补全实验代码，计算线程负责的子矩阵元素Csub的累加值（第81行）。使用for循环遍历共享内存，计算矩阵C的一个元素的值 —— 将矩阵As和矩阵Bs的对应元素相乘并累加到Csub中
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-matrixmulsharedmemkernel" class="md-nav__link">
+  <a href="#3-c97-bx-by-tx-ty-cc" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 检查是否调用MatrixMulSharedMemKernel
+      3. 将结果写回矩阵C。在第97行，使用块索引 (bx, by) 和线程索引 (tx, ty) 计算矩阵C中的全局位置。写入全局内存之前，务必检查全局索引是否在矩阵C的有效范围内，以避免越界访问
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mainformatrixmulsharedmemkernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 修改main函数中的for循环，使其调用MatrixMulSharedMemKernel函数
     </span>
   </a>
   
@@ -1168,9 +1326,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-matrixmulkernel" class="md-nav__link">
     <span class="md-ellipsis">
-      6. 查看实验结果，对比使用全局内存的时间开销和计算效率。检查结果是否正确
+      6. 查看并检查结果是否正确，对比使用全局内存的时间开销和计算效率（即与实验四的MatrixMulKernel函数进行对比）
     </span>
   </a>
   
@@ -1179,16 +1337,16 @@
         <li class="md-nav__item">
   <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
-      7. 更改块大小，矩阵大小（可改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果
+      7. 更改块大小、矩阵大小（可改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-cuda" class="md-nav__link">
+  <a href="#8-1use_cublasmainfor-cuda" class="md-nav__link">
     <span class="md-ellipsis">
-      8. 调用CUDA的矩阵乘法算子，对比结果差异
+      8. 打开第1行的USE_CUBLAS宏定义，修改main函数中的for循环，使其调用 CUDA 自带的矩阵乘法算子，编译运行并对比不同参数（块大小、矩阵大小）下的运行结果差异
     </span>
   </a>
   
@@ -1209,7 +1367,10 @@
                   
 
 
-<h1 id="_1">练习：利用共享内存提升计算性能</h1>
+  <h1>Step</h1>
+
+<!-- # 练习：利用共享内存提升计算性能 -->
+
 <ul>
 <li>
 <p><strong>任务</strong>：在实验四的代码基础上，利用GPU共享内存实现矩阵计算优化。</p>
@@ -1229,24 +1390,192 @@
 <li>根据共享内存大小优化矩阵分块大小，提升计算性能。</li>
 </ul>
 </li>
+<li>
+<p><strong>实验代码</strong>：<code>matrix_mul.cu</code></p>
+</li>
 </ul>
-<h4 id="1-matrix_mulcu15matrixmulsharedmemkernel65-astytx-bstytx">1. 与实验四文件相同，打开实验代码<code>matrix_mul.cu</code>，在第15行<code>MatrixMulSharedMemKernel</code>函数中补全共享内存优化矩阵乘法的代码。在第65行，实现每个线程加载一个元素到共享内存中 <code>As[ty][tx]</code> 或 <code>Bs[ty][tx]</code>，注意边界条件判断，避免访问越界导致计算结果有误</h4>
+<h4 id="0-matrix_mulcu22">0. 复制以下代码，粘贴到实验四的<code>matrix_mul.cu</code>文件的第22行：</h4>
+<pre style="max-height:305px; overflow-y:auto;">
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">  </span><span class="c1">// Block index</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">bx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Thread index</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">tx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">ty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Index of the first sub-matrix of A processed by the block</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">aBegin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wA</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">by</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Index of the last sub-matrix of A processed by the block</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">aEnd</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">aBegin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">wA</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Step size used to iterate through the sub-matrices of A</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">aStep</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Index of the first sub-matrix of B processed by the block</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">bBegin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">bx</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Step size used to iterate through the sub-matrices of B</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">bStep</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">wB</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Csub is used to store the element of the block sub-matrix</span>
+<span class="w">  </span><span class="c1">// that is computed by the thread</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">Csub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// Loop over all the sub-matrices of A and B</span>
+<span class="w">  </span><span class="c1">// required to compute the block sub-matrix</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aBegin</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bBegin</span><span class="p">;</span>
+<span class="w">       </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">aEnd</span><span class="p">;</span>
+<span class="w">       </span><span class="n">a</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">aStep</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">bStep</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Declaration of the shared memory array As used to</span>
+<span class="w">    </span><span class="c1">// store the sub-matrix of A</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">As</span><span class="p">[</span><span class="n">BLOCK_SIZE</span><span class="p">][</span><span class="n">BLOCK_SIZE</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Declaration of the shared memory array Bs used to</span>
+<span class="w">    </span><span class="c1">// store the sub-matrix of B</span>
+<span class="w">    </span><span class="n">__shared__</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">Bs</span><span class="p">[</span><span class="n">BLOCK_SIZE</span><span class="p">][</span><span class="n">BLOCK_SIZE</span><span class="p">];</span>
+
+<span class="w">    </span><span class="c1">// Load the matrices from device memory</span>
+<span class="w">    </span><span class="c1">// to shared memory; each **thread** loads</span>
+<span class="w">    </span><span class="c1">// one element of each matrix</span>
+<span class="w">    </span><span class="c1">// --- TO DO :Load the elements of the sub-matrix of A into As ---</span>
+<span class="w">    </span><span class="c1">// ---        Load the elements of the sub-matrix of B into Bs ---</span>
+<span class="w">    </span><span class="c1">// NOTE: Ensure that the thread indices do not exceed the matrix dimensions to avoid out-of-bounds access.</span>
+<span class="w">    </span><span class="c1">//       Use boundary checks to load valid elements into shared memory, and set invalid elements to 0.0f</span>
+
+
+
+
+<span class="w">    </span><span class="c1">// Synchronize to make sure the matrices are loaded</span>
+<span class="w">    </span><span class="n">__syncthreads</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// Multiply the two matrices together;</span>
+<span class="w">    </span><span class="c1">// each thread computes one element</span>
+<span class="w">    </span><span class="c1">// of the block sub-matrix</span>
+<span class="cp">#pragma unroll</span>
+<span class="w">    </span><span class="c1">// --- TO DO :Implement the matrix multiplication using the sub-matrices As and Bs ---</span>
+
+
+
+
+<span class="w">    </span><span class="c1">// Synchronize to make sure that the preceding</span>
+<span class="w">    </span><span class="c1">// computation is done before loading two new</span>
+<span class="w">    </span><span class="c1">// sub-matrices of A and B in the next iteration</span>
+<span class="w">    </span><span class="n">__syncthreads</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Write the block sub-matrix to device memory;</span>
+<span class="w">  </span><span class="c1">// each thread writes one element</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wB</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BLOCK_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">bx</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// --- TO DO :Store the computed Csub result into matrix C ---</span>
+<span class="w">  </span><span class="c1">// NOTE: Ensure that the thread indices &quot;c&quot; do not exceed the matrix dimensions to avoid out-of-bounds access.</span>
+<span class="w">  </span><span class="c1">//       Use boundary checks to write valid elements to the output matrix C.</span>
+</code></pre></div></td></tr></table></div>
+</pre>
+
+<p><center><img src="../assets/3-1-0.png" width = 100%></center></p>
+<p>&emsp;&emsp;模板代码的实现思路如下图所示。代码中定义的线程数和矩阵 <script type="math/tex">C</script> 的元素个数相同，<ins>每个线程负责计算矩阵 <script type="math/tex">C</script> 的一个元素</ins>。每个线程块对应矩阵的一个分块，线程块中的每个线程则对应矩阵分块中的一个元素。</p>
 <p><center><img src="../assets/3-1-1.png" width = 100%></center></p>
-<h4 id="2-csub77for-loop-as-bs-csub">2. 继续补全实验代码，计算线程负责的子矩阵元素<code>Csub</code>的累加值（第77行）。遍历（for loop）共享内存，将矩阵 <code>As</code>和矩阵 <code>Bs</code> 的对应元素相乘并累加到 <code>Csub</code> 中</h4>
+<div class="admonition info">
+<p class="admonition-title">符号说明 <img alt="📋" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4cb.svg" title=":clipboard:" /></p>
+<p>&emsp;&emsp;上图右侧的<code>C'</code>表示矩阵 <script type="math/tex">C</script> 对应到图左侧第二行最后一列的线程块中的分块矩阵；<code>C'[2][1]</code>则表示该分块矩阵第3行第2列的元素，其他依此类推。</p>
+</div>
+<p>&emsp;&emsp;计算时，每个线程只加载矩阵 <script type="math/tex">A</script>、<script type="math/tex">B</script> 对应到线程块中固定位置的一个元素。例如，上图右侧的线程<code>Thread(1,2)</code>在第一轮循环只加载图左侧<code>aBegin</code>指向的分块矩阵中的<code>A'[2][1]</code>和<code>bBegin</code>指向的分块矩阵中的<code>B'[2][1]</code>；在第二轮循环只加载<code>aBegin + aStep</code>指向的分块矩阵中的<code>A'[2][1]</code>和<code>bBegin + bStep</code>指向的分块矩阵中的<code>B'[2][1]</code>，依此类推。</p>
+<p>&emsp;&emsp;尽管线程<code>Thread(i,j)</code>每轮循环只加载<code>A'[j][i]</code>和<code>B'[j][i]</code>两个元素，<strong>但在计算<code>C'[j][i]</code>时所需的<code>A'[j][k]</code>和<code>B'[k][i]</code>的所有元素（0 &le; <code>k</code> &lt; <code>BLOCK_SIZE</code>）都已经被线程块中的其他线程并行加载到了共享存储器中</strong>，因此<code>Thread(i,j)</code>能够正确无误地完成<code>C'[j][i]</code>的计算。</p>
+<p>&emsp;&emsp;为方便实现，可将矩阵元素的索引分为 <strong>线程块索引</strong> 与 <strong>块内线程索引</strong> 两级索引。<ins>线程块索引是位于线程块左上角的线程的索引值</ins>，<ins>块内线程索引则是块内线程相对于线程块索引的偏移量</ins>。由上图可知，<code>C'[2][1]</code>由第<code>(X,1)</code>个线程块的第<code>(1,2)</code>个线程计算，结合矩阵 <script type="math/tex">C</script> 的列数<code>N</code>和线程块的边长<code>BLOCK_SIZE</code>，即可得到线程块<code>(X,1)</code>的二维索引是<code>[1*BLOCK_SIZE][X*BLOCK_SIZE]</code>，一维索引是<code>(1*N + X)*BLOCK_SIZE</code>；再由块内线程坐标<code>(1,2)</code>容易得出块内线程的二维索引是<code>[2][1]</code>，一维索引是<code>2*N + 1</code>。将两级索引值相加得出<code>C'[2][1]</code>对应到矩阵 <script type="math/tex">C</script> 的全局二维索引是<code>[1*BLOCK_SIZE + 2][X*BLOCK_SIZE + 1]</code>，一维索引是<code>(1*N + X)*BLOCK_SIZE + 2*N + 1</code>。</p>
+<h4 id="1-matrixmulsharedmemkernel69abastytxbstytx">1. 补全<code>MatrixMulSharedMemKernel</code>函数的共享内存优化矩阵乘法的代码。在第69行，实现每个线程分别加载矩阵A、B的一个元素到共享内存的<code>As[ty][tx]</code>、<code>Bs[ty][tx]</code>中，注意边界条件判断，避免访问越界导致计算结果有误</h4>
 <p><center><img src="../assets/3-1-2.png" width = 100%></center></p>
-<h4 id="3-c-bx-by-tx-ty-c-c">3. 将结果写回矩阵<code>C</code>。使用块索引 (<code>bx</code>, <code>by</code>) 和线程索引 (<code>tx</code>, <code>ty</code>) 计算矩阵 <code>C</code> 中的全局位置。写入全局内存之前，务必检查全局索引是否在矩阵 <code>C</code> 的有效范围内，以避免越界访问</h4>
+<h4 id="2-csub81forc-asbscsub">2. 继续补全实验代码，计算线程负责的子矩阵元素<code>Csub</code>的累加值（第81行）。使用<code>for</code>循环遍历共享内存，计算矩阵<code>C</code>的一个元素的值 —— 将矩阵<code>As</code>和矩阵<code>Bs</code>的对应元素相乘并累加到<code>Csub</code>中</h4>
 <p><center><img src="../assets/3-1-3.png" width = 100%></center></p>
-<h4 id="4-matrixmulsharedmemkernel">4. 检查是否调用<code>MatrixMulSharedMemKernel</code></h4>
+<h4 id="3-c97-bx-by-tx-ty-cc">3. 将结果写回矩阵<code>C</code>。在第97行，使用块索引 (<code>bx</code>, <code>by</code>) 和线程索引 (<code>tx</code>, <code>ty</code>) 计算矩阵<code>C</code>中的全局位置。写入全局内存之前，务必检查全局索引是否在矩阵<code>C</code>的有效范围内，以避免越界访问</h4>
 <p><center><img src="../assets/3-1-4.png" width = 100%></center></p>
+<h4 id="4-mainformatrixmulsharedmemkernel">4. 修改<code>main</code>函数中的<code>for</code>循环，使其调用<code>MatrixMulSharedMemKernel</code>函数</h4>
+<p><center><img src="../assets/3-1-5.png" width = 100%></center></p>
 <h4 id="5-aout">5. 保存文件，执行编译命令脚本，执行可执行文件<code>a.out</code></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bash<span class="w"> </span>compile.sh
-./a.out
+./a.out<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1000</span>
 </code></pre></div></td></tr></table></div>
-<h4 id="6">6. 查看实验结果，对比使用全局内存的时间开销和计算效率。检查结果是否正确</h4>
-<h4 id="7">7. 更改块大小，矩阵大小（可改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果</h4>
-<h4 id="8-cuda">8. 调用CUDA的矩阵乘法算子，对比结果差异</h4>
-<p><center><img src="../assets/3-1-5.png" width = 100%></center></p>
+<h4 id="6-matrixmulkernel">6. 查看并检查结果是否正确，对比使用全局内存的时间开销和计算效率（即与实验四的<code>MatrixMulKernel</code>函数进行对比）</h4>
+<h4 id="7">7. 更改块大小、矩阵大小（可改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果</h4>
+<h4 id="8-1use_cublasmainfor-cuda">8. 打开第1行的<code>USE_CUBLAS</code>宏定义，修改<code>main</code>函数中的<code>for</code>循环，使其调用 CUDA 自带的矩阵乘法算子，编译运行并对比不同参数（块大小、矩阵大小）下的运行结果差异</h4>
+<p><center><img src="../assets/3-1-6.png" width = 100%></center></p>
+<p><center><img src="../assets/3-1-7.png" width = 100%></center></p>
 
 
 

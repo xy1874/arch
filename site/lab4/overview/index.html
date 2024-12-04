@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../../lab3/preview/">
+      
+      
+        <link rel="next" href="../theory/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>实验4：使用C/CUDA编写GPU代码 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
+        <title>实验概述 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
       
     
     
@@ -68,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#4ccudagpu" class="md-skip">
+        <a href="#4-ccuda-gpu" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              实验4：使用C/CUDA编写GPU代码
+              实验概述
             
           </span>
         </div>
@@ -257,6 +261,26 @@
           
   
   实验三
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  实验四
 
         </a>
       </li>
@@ -1096,6 +1120,206 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验四
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            实验四
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      实验目的
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      实验前准备
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      实验内容
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预习下一个实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1164,19 +1388,19 @@
                   
 
 
-<h1 id="4ccudagpu">实验4：使用C/CUDA编写GPU代码</h1>
+<h1 id="4-ccuda-gpu">实验4：使用 C/CUDA 编写 GPU 代码</h1>
 <h2 id="_1">实验目的</h2>
-<p>&emsp;&emsp;1. 掌握使用C/CUDA编程实现矩阵乘法；</p>
-<p>&emsp;&emsp;2. 学习如何利用GPU的多线程并行计算能力提升程序性能；</p>
-<p>&emsp;&emsp;3. 掌握CUDA的基本编程模型和线程调度方式，理解如何在GPU上进行高效的矩阵运算，从而进一步挖掘计算设备的并行处理能力。</p>
+<p>&emsp;&emsp;1. 掌握使用 C/CUDA 编程实现矩阵乘法；</p>
+<p>&emsp;&emsp;2. 学习如何利用 GPU 的多线程并行计算能力提升程序性能；</p>
+<p>&emsp;&emsp;3. 掌握 CUDA 的基本编程模型和线程调度方式，理解如何在 GPU 上进行高效的矩阵运算，从而进一步挖掘计算设备的并行处理能力。</p>
 <h2 id="_2">实验前准备</h2>
-<p>&emsp;&emsp;阅读以下材料，了解CUDA编程的基本原理及GPU架构的特性，以实现高效的矩阵乘法计算。</p>
+<p>&emsp;&emsp;阅读以下材料，了解 CUDA 编程的基本原理及 GPU 架构的特性，以实现高效的矩阵乘法计算。</p>
 <ul>
 <li>《CUDA C Programming Guide》  </li>
 </ul>
-<p>&emsp;&emsp;实验环境：一台安装了CUDA Toolkit、NVIDIA驱动程序和相关开发工具（如<code>nvcc</code>、<code>cuda-gdb</code>等）的计算机，操作系统为Ubuntu x64。</p>
+<p>&emsp;&emsp;实验环境：一台安装了 CUDA Toolkit、NVIDIA 驱动程序和相关开发工具（如<code>nvcc</code>、<code>cuda-gdb</code>等）的计算机，操作系统为 Ubuntu x64。</p>
 <h2 id="_3">实验内容</h2>
-<p>&emsp;&emsp;1. 使用C/CUDA实现GPU上的矩阵乘法算法；</p>
+<p>&emsp;&emsp;1. 使用 C/CUDA 实现 GPU上 的矩阵乘法算法；</p>
 <p>&emsp;&emsp;2. 观察和对比不同尺寸的输入矩阵，以及不同块大小下的矩阵乘法的计算结果。</p>
 
 

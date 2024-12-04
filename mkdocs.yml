@@ -95,16 +95,14 @@ nav:
       - 练习3 (选): lab3/step3.md
     - 实验报告要求: lab3/report.md
     - 预习下一个实验: lab3/preview.md
-  # - 实验四:
-  #   - 实验概述: lab4/overview.md
-  #   - 实验原理: lab4/theory.md
-  #   - 实验步骤: lab4/step.md
-  #   - 预习下一个实验: lab4/preview.md
+  - 实验四:
+    - 实验概述: lab4/overview.md
+    - 实验原理: lab4/theory.md
+    - 实验步骤: lab4/step.md
+    - 预习下一个实验: lab4/preview.md
   # - 实验五:
   #   - 实验概述: lab5/overview.md
   #   - 实验原理: lab5/theory.md
   #   - 实验步骤: lab5/step.md
-  # - 实验六:
-  #   - 实验概述: lab6/overview.md
-    # - 实验原理: lab6/theory.md
-    # - 实验步骤: lab6/step.md
+  #   - 实验报告要求: lab5/report.md
+  # - 实验六: lab6/overview.md

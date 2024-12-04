@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../theory/">
+      
+      
+        <link rel="next" href="../preview/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>练习：实现GPU矩阵乘法 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
+        <title>实验步骤 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
       
     
     
@@ -68,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gpu" class="md-skip">
+        <a href="#0" class="md-skip">
           跳转至
         </a>
       
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              练习：实现GPU矩阵乘法
+              实验步骤
             
           </span>
         </div>
@@ -257,6 +261,26 @@
           
   
   实验三
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  实验四
 
         </a>
       </li>
@@ -1096,24 +1120,130 @@
   
 
     
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+      
+      
+  
+  
+    
   
   
   
     
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验四
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            实验四
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
   
   
     <label class="md-nav__title" for="__toc">
@@ -1123,36 +1253,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-srclab4-5100matrixmulkernelcuda105110" class="md-nav__link">
+  <a href="#0" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 打开src/lab4-5目录中的示例代码，在100行处的MatrixMulKernel函数下实现CUDA矩阵乘的代码。将结果矩阵的位置索引计算代码填入指定位置（第105，110行）
+      0. 下载并解压实验包
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-for118" class="md-nav__link">
+  <a href="#1-lab4-5matrix_mulcu30matrixmulkernel-cuda-3438" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 继续实现矩阵乘，将计算矩阵乘结果的for循环写入到指定位置（第118行）
+      1. 打开lab4-5目录中的模板代码matrix_mul.cu，在30行处的MatrixMulKernel函数下实现 CUDA 矩阵乘的代码。将结果矩阵的位置索引计算代码填入指定位置（第34、38行）
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-123" class="md-nav__link">
+  <a href="#2-for46-c" class="md-nav__link">
     <span class="md-ellipsis">
-      3. 将计算结果赋值给结果矩阵的对应位置（第123行）
+      2. 将计算矩阵乘结果的for循环写入到指定位置（第46行），每个线程计算矩阵 C 一个元素的值
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-matrixmulkernel" class="md-nav__link">
+  <a href="#3-51" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 检查是否调用MatrixMulKernel
+      3. 将计算结果赋值给结果矩阵的对应位置（第51行）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mainmatrixmulkernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 检查main函数是否调用MatrixMulKernel函数
     </span>
   </a>
   
@@ -1177,9 +1316,142 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-188mnk16tile_size" class="md-nav__link">
+  <a href="#7-13tile_size" class="md-nav__link">
     <span class="md-ellipsis">
-      7. 更改矩阵尺寸（第188行）（m,n,k(矩阵为方阵)），块大小（第16行）（TILE_SIZE）对比不同块大小的计算结果
+      7. 更改矩阵尺寸（矩阵为方阵）、第13行的线程块大小TILE_SIZE（线程块也是方阵），对比不同参数下的计算结果
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    预习下一个实验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. 下载并解压实验包
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-lab4-5matrix_mulcu30matrixmulkernel-cuda-3438" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 打开lab4-5目录中的模板代码matrix_mul.cu，在30行处的MatrixMulKernel函数下实现 CUDA 矩阵乘的代码。将结果矩阵的位置索引计算代码填入指定位置（第34、38行）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-for46-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 将计算矩阵乘结果的for循环写入到指定位置（第46行），每个线程计算矩阵 C 一个元素的值
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 将计算结果赋值给结果矩阵的对应位置（第51行）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mainmatrixmulkernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 检查main函数是否调用MatrixMulKernel函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-aout" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 保存文件，执行编译命令脚本，执行可执行文件a.out
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 查看计算GPU计算矩阵乘时间和计算结果是否正确
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-13tile_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 更改矩阵尺寸（矩阵为方阵）、第13行的线程块大小TILE_SIZE（线程块也是方阵），对比不同参数下的计算结果
     </span>
   </a>
   
@@ -1200,46 +1472,54 @@
                   
 
 
-<h1 id="gpu">练习：实现GPU矩阵乘法</h1>
+  <h1>实验步骤</h1>
+
+<!-- # 练习：实现GPU矩阵乘法 -->
+
 <ul>
 <li>
-<p><strong>任务</strong>：在示例代码基础上完成cuda矩阵乘法。</p>
+<p><strong>任务</strong>：在模板代码基础上完成 CUDA 矩阵乘法的实现。</p>
 </li>
 <li>
 <p><strong>子任务</strong>：</p>
 <ul>
-<li>验证GPU矩阵乘法结果的正确性；  </li>
+<li>验证 GPU 矩阵乘法结果的正确性；  </li>
 <li>测试不同规模的矩阵乘法，观察实验结果。</li>
 </ul>
 </li>
 <li>
 <p><strong>目标</strong>：</p>
 <ul>
-<li>熟悉GPU编程模型；</li>
-<li>学习CPU实现矩阵乘法实现思路；  </li>
-<li>熟悉CUDA文件编译和执行过程。</li>
+<li>熟悉 GPU 编程模型；</li>
+<li>学习 CPU 实现矩阵乘法实现思路；  </li>
+<li>熟悉 CUDA 文件编译和执行过程。</li>
 </ul>
 </li>
 <li>
 <p><strong>实验代码</strong>：<code>matrix_mul.cu</code></p>
 </li>
 </ul>
-<h4 id="1-srclab4-5100matrixmulkernelcuda105110">1. 打开<code>src/lab4-5</code>目录中的示例代码，在100行处的<code>MatrixMulKernel</code>函数下实现CUDA矩阵乘的代码。将结果矩阵的位置索引计算代码填入指定位置（第105，110行）</h4>
+<h4 id="0">0. 下载并解压实验包</h4>
+<p>&emsp;&emsp;从<a href="../../#1" target=_blank>首页链接</a>下载<code>lab4-5.tar.gz</code>，将其拷贝至用户目录，并执行命令<code>tar -zxvf lab4-5.tar.gz</code>解压实验包。</p>
+<h4 id="1-lab4-5matrix_mulcu30matrixmulkernel-cuda-3438">1. 打开<code>lab4-5</code>目录中的模板代码<code>matrix_mul.cu</code>，在30行处的<code>MatrixMulKernel</code>函数下实现 CUDA 矩阵乘的代码。将结果矩阵的位置索引计算代码填入指定位置（第34、38行）</h4>
 <p><center><img src="../assets/3-1-1.png" width = 100%></center></p>
-<h4 id="2-for118">2. 继续实现矩阵乘，将计算矩阵乘结果的<code>for</code>循环写入到指定位置（第118行）</h4>
+<h4 id="2-for46-c">2. 将计算矩阵乘结果的<code>for</code>循环写入到指定位置（第46行），每个线程计算矩阵 C 一个元素的值</h4>
 <p><center><img src="../assets/3-1-2.png" width = 100%></center></p>
-<h4 id="3-123">3. 将计算结果赋值给结果矩阵的对应位置（第123行）</h4>
+<h4 id="3-51">3. 将计算结果赋值给结果矩阵的对应位置（第51行）</h4>
 <p><center><img src="../assets/3-1-3.png" width = 100%></center></p>
-<h4 id="4-matrixmulkernel">4. 检查是否调用<code>MatrixMulKernel</code></h4>
+<h4 id="4-mainmatrixmulkernel">4. 检查<code>main</code>函数是否调用<code>MatrixMulKernel</code>函数</h4>
 <p><center><img src="../assets/3-1-4.png" width = 100%></center></p>
 <h4 id="5-aout">5. 保存文件，执行编译命令脚本，执行可执行文件<code>a.out</code></h4>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>bash<span class="w"> </span>compile.sh
-./a.out
+./a.out<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1000</span>
 </code></pre></div></td></tr></table></div>
+<p>&emsp;&emsp;在命令<code>./a.out 1 1000</code>中，“<code>1</code>”表示对矩阵乘法运算结果进行校验，“<code>1000</code>”表示测试时输入矩阵的边长。</p>
 <h4 id="6-gpu">6. 查看计算GPU计算矩阵乘时间和计算结果是否正确</h4>
 <p><center><img src="../assets/3-1-5.png" width = 100%></center></p>
-<h4 id="7-188mnk16tile_size">7. 更改矩阵尺寸（第188行）（m,n,k(矩阵为方阵)），块大小（第16行）（TILE_SIZE）对比不同块大小的计算结果</h4>
+<h4 id="7-13tile_size">7. 更改矩阵尺寸（矩阵为方阵）、第13行的线程块大小<code>TILE_SIZE</code>（线程块也是方阵），对比不同参数下的计算结果</h4>
+<p><center><img src="../assets/3-1-6.png" width = 100%></center></p>
+<p><center><img src="../assets/3-1-7.png" width = 100%></center></p>
 
 
 
