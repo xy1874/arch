@@ -138,7 +138,7 @@ bash compile.sh
 
 #### 6. 查看并检查结果是否正确，对比使用全局内存的时间开销和计算效率（即与实验四的`MatrixMulKernel`函数进行对比）
 
-#### 7. 更改块大小、矩阵大小（可改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果
+#### 7. 更改块大小、矩阵大小（比如改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果
 
 #### 8. 打开第1行的`USE_CUBLAS`宏定义，修改`main`函数中的`for`循环，使其调用 CUDA 自带的矩阵乘法算子，编译运行并对比不同参数（块大小、矩阵大小）下的运行结果差异
 
@@ -146,4 +146,4 @@ bash compile.sh
 
 <center><img src="../assets/3-1-7.png" width = 100%></center>
 
-
+&emsp;&emsp;`cublasSgemm`是 CUDA 的 <a href="https://docs.nvidia.com/cuda/cublas/" target=_blank>cuBLAS库</a>的矩阵乘法函数，功能是计算 $C = \alpha \cdot A \cdot B + \beta \cdot C$。该函数的使用方法详见 <a href="https://docs.nvidia.com/cuda/cublas/index.html?#cublas-t-gemm" target=_blank>docs.nvidia.com/cuda/cublas/index.html?#cublas-t-gemm</a>。

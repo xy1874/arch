@@ -9,7 +9,7 @@
 
 ## 实验内容
 
-&emsp;&emsp;<a href="https://github.com/karpathy/llama2.c" target=_blank>Llama2</a> 是基于 Transformer 架构的轻量级开源自然语言处理模型，模型的推理和量化均通过单文件的 C 程序实现，且代码中含有丰富的注释，便于开发者进行移植、部署和优化。
+&emsp;&emsp;<a href="https://github.com/karpathy/llama2.c" target=_blank>Llama2</a> 是基于 Transformer 架构的轻量级开源自然语言处理模型，模型的推理和量化均使用单文件的 C 程序实现，且代码中含有丰富的注释，便于开发者进行移植、部署和优化。
 
 &emsp;&emsp;本实验是开放性实验，同学们可在前面实验涉及到的矩阵乘法优化方法中自由选择和组合，将优化后的矩阵乘法算法集成到 Llama2 大模型中，实现 Llama2 推理性能的加速。具体内容包括：
 
@@ -54,13 +54,13 @@
 
 &emsp;&emsp;修改前面实验实现的矩阵优化算法，并将其集成到`run.c`中。
 
-&emsp;&emsp;修改代码后，应先执行`make run`编译代码，再执行`./run xxx.bin`。
+&emsp;&emsp;修改代码后，应先编译代码再执行`./run xxx.bin`。若使用 CUDA优化，需执行`nvcc -O3 -o run run.c -lm`命令编译代码；若使用了 cuBLAS 库，则执行`nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas`编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行`make run`即可。
 
 #### 5. 对比分析优化前后的推理性能
 
-&emsp;&emsp;分别使用3个`.bin`文件对优化前后的 Llama2 模型各自运行5次，记录推理速度平均值，与优化前的运行效果进行对比，尝试对结果进行分析和优化。
+&emsp;&emsp;分别使用3个`.bin`文件对优化前后的 Llama2 模型各自运行3~5次，记录推理速度平均值，与优化前的运行效果进行对比，尝试对结果进行分析和优化。
 
-&emsp;&emsp;下图是使用 CUDA 优化的示例。使用 CUDA 需执行`nvcc -O3 -o run run.c -lm`命令编译代码；若使用了 cuBLAS 库，则执行`nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas`编译代码。若采用 AVX、OpenMP 等其他优化方法，则直接执行`make run`编译代码即可。
+&emsp;&emsp;下图是使用 CUDA 优化的示例。
 
 <center><img src="../assets/3-2.png" width = 100%></center>
 

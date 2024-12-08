@@ -282,6 +282,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lab5/overview/" class="md-tabs__link">
+          
+  
+  实验五
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1247,6 +1265,139 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验五
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            实验五
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/step/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab5/report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验报告要求
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1389,7 +1540,7 @@
 <p>&emsp;&emsp;1. 学习综合运用所学的矩阵乘法优化手段，优化大模型推理性能；</p>
 <p>&emsp;&emsp;2. 理解计算机体系结构相关原理和技术在实际应用中的作用。</p>
 <h2 id="_2">实验内容</h2>
-<p>&emsp;&emsp;<a href="https://github.com/karpathy/llama2.c" target=_blank>Llama2</a> 是基于 Transformer 架构的轻量级开源自然语言处理模型，模型的推理和量化均通过单文件的 C 程序实现，且代码中含有丰富的注释，便于开发者进行移植、部署和优化。</p>
+<p>&emsp;&emsp;<a href="https://github.com/karpathy/llama2.c" target=_blank>Llama2</a> 是基于 Transformer 架构的轻量级开源自然语言处理模型，模型的推理和量化均使用单文件的 C 程序实现，且代码中含有丰富的注释，便于开发者进行移植、部署和优化。</p>
 <p>&emsp;&emsp;本实验是开放性实验，同学们可在前面实验涉及到的矩阵乘法优化方法中自由选择和组合，将优化后的矩阵乘法算法集成到 Llama2 大模型中，实现 Llama2 推理性能的加速。具体内容包括：</p>
 <p>&emsp;&emsp;1. 阅读 Llama2 推理程序的代码，了解其矩阵乘法的实现方式，并通过分析或调试得出其矩阵乘法运算的数据规模；</p>
 <p>&emsp;&emsp;2. 选用一种优化手段或将多种优化手段相结合，提升 Llama2 的矩阵乘法运算性能；</p>
@@ -1411,10 +1562,10 @@
 <p>&emsp;&emsp;通过在代码中添加<code>printf</code>语句，或使用 GDB 等调试工具，查看<code>matmul</code>函数的输入矩阵的尺寸参数。</p>
 <h4 id="4-matmul">4. 自行选择恰当的优化方法优化<code>matmul</code>函数</h4>
 <p>&emsp;&emsp;修改前面实验实现的矩阵优化算法，并将其集成到<code>run.c</code>中。</p>
-<p>&emsp;&emsp;修改代码后，应先执行<code>make run</code>编译代码，再执行<code>./run xxx.bin</code>。</p>
+<p>&emsp;&emsp;修改代码后，应先编译代码再执行<code>./run xxx.bin</code>。若使用 CUDA优化，需执行<code>nvcc -O3 -o run run.c -lm</code>命令编译代码；若使用了 cuBLAS 库，则执行<code>nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas</code>编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行<code>make run</code>即可。</p>
 <h4 id="5">5. 对比分析优化前后的推理性能</h4>
-<p>&emsp;&emsp;分别使用3个<code>.bin</code>文件对优化前后的 Llama2 模型各自运行5次，记录推理速度平均值，与优化前的运行效果进行对比，尝试对结果进行分析和优化。</p>
-<p>&emsp;&emsp;下图是使用 CUDA 优化的示例。使用 CUDA 需执行<code>nvcc -O3 -o run run.c -lm</code>命令编译代码；若使用了 cuBLAS 库，则执行<code>nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas</code>编译代码。若采用 AVX、OpenMP 等其他优化方法，则直接执行<code>make run</code>编译代码即可。</p>
+<p>&emsp;&emsp;分别使用3个<code>.bin</code>文件对优化前后的 Llama2 模型各自运行3~5次，记录推理速度平均值，与优化前的运行效果进行对比，尝试对结果进行分析和优化。</p>
+<p>&emsp;&emsp;下图是使用 CUDA 优化的示例。</p>
 <p><center><img src="../assets/3-2.png" width = 100%></center></p>
 <h2 id="_4">实验报告要求</h2>
 <p>&emsp;&emsp;按以下要求撰写实验报告。实验报告无模板，只需按要求写好相关内容即可。</p>

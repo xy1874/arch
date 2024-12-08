@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../theory/">
+      
+      
+        <link rel="next" href="../report/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Step - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
+        <title>实验步骤 - 计算机体系结构实验（2024秋季） | 哈工大（深圳）</title>
       
     
     
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Step
+              实验步骤
             
           </span>
         </div>
@@ -275,6 +279,26 @@
           
   
   实验四
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  实验五
 
         </a>
       </li>
@@ -1247,6 +1271,256 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    实验五
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            实验五
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    实验步骤
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-matrix_mulcu22" class="md-nav__link">
+    <span class="md-ellipsis">
+      0. 复制以下代码，粘贴到实验四的matrix_mul.cu文件的第22行：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-matrixmulsharedmemkernel69abastytxbstytx" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 补全MatrixMulSharedMemKernel函数的共享内存优化矩阵乘法的代码。在第69行，实现每个线程分别加载矩阵A、B的一个元素到共享内存的As[ty][tx]、Bs[ty][tx]中，注意边界条件判断，避免访问越界导致计算结果有误
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-csub81forc-asbscsub" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 继续补全实验代码，计算线程负责的子矩阵元素Csub的累加值（第81行）。使用for循环遍历共享内存，计算矩阵C的一个元素的值 —— 将矩阵As和矩阵Bs的对应元素相乘并累加到Csub中
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-c97-bx-by-tx-ty-cc" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 将结果写回矩阵C。在第97行，使用块索引 (bx, by) 和线程索引 (tx, ty) 计算矩阵C中的全局位置。写入全局内存之前，务必检查全局索引是否在矩阵C的有效范围内，以避免越界访问
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mainformatrixmulsharedmemkernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 修改main函数中的for循环，使其调用MatrixMulSharedMemKernel函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-aout" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 保存文件，执行编译命令脚本，执行可执行文件a.out
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-matrixmulkernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 查看并检查结果是否正确，对比使用全局内存的时间开销和计算效率（即与实验四的MatrixMulKernel函数进行对比）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 更改块大小、矩阵大小（比如改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-1use_cublasmainfor-cuda" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 打开第1行的USE_CUBLAS宏定义，修改main函数中的for循环，使其调用 CUDA 自带的矩阵乘法算子，编译运行并对比不同参数（块大小、矩阵大小）下的运行结果差异
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验报告要求
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1337,7 +1611,7 @@
         <li class="md-nav__item">
   <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
-      7. 更改块大小、矩阵大小（可改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果
+      7. 更改块大小、矩阵大小（比如改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果
     </span>
   </a>
   
@@ -1367,7 +1641,7 @@
                   
 
 
-  <h1>Step</h1>
+  <h1>实验步骤</h1>
 
 <!-- # 练习：利用共享内存提升计算性能 -->
 
@@ -1572,10 +1846,11 @@
 ./a.out<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1000</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="6-matrixmulkernel">6. 查看并检查结果是否正确，对比使用全局内存的时间开销和计算效率（即与实验四的<code>MatrixMulKernel</code>函数进行对比）</h4>
-<h4 id="7">7. 更改块大小、矩阵大小（可改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果</h4>
+<h4 id="7">7. 更改块大小、矩阵大小（比如改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果</h4>
 <h4 id="8-1use_cublasmainfor-cuda">8. 打开第1行的<code>USE_CUBLAS</code>宏定义，修改<code>main</code>函数中的<code>for</code>循环，使其调用 CUDA 自带的矩阵乘法算子，编译运行并对比不同参数（块大小、矩阵大小）下的运行结果差异</h4>
 <p><center><img src="../assets/3-1-6.png" width = 100%></center></p>
 <p><center><img src="../assets/3-1-7.png" width = 100%></center></p>
+<p>&emsp;&emsp;<code>cublasSgemm</code>是 CUDA 的 <a href="https://docs.nvidia.com/cuda/cublas/" target=_blank>cuBLAS库</a>的矩阵乘法函数，功能是计算 <script type="math/tex">C = \alpha \cdot A \cdot B + \beta \cdot C</script>。该函数的使用方法详见 <a href="https://docs.nvidia.com/cuda/cublas/index.html?#cublas-t-gemm" target=_blank>docs.nvidia.com/cuda/cublas/index.html?#cublas-t-gemm</a>。</p>
 
 
 
