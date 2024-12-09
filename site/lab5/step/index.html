@@ -1846,6 +1846,7 @@
 ./a.out<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1000</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="6-matrixmulkernel">6. 查看并检查结果是否正确，对比使用全局内存的时间开销和计算效率（即与实验四的<code>MatrixMulKernel</code>函数进行对比）</h4>
+<p>&emsp;&emsp;使用实验室电脑完成本实验时，若计算结果的大部分数值与参考值相差在 0.5 以内，可在上述步骤 3 的结果写回中自行添加四舍五入的逻辑。此现象是实验室显卡运算精度所致。</p>
 <h4 id="7">7. 更改块大小、矩阵大小（比如改为块大小的整数次幂），对比使用共享内存和全局内存的实验结果</h4>
 <h4 id="8-1use_cublasmainfor-cuda">8. 打开第1行的<code>USE_CUBLAS</code>宏定义，修改<code>main</code>函数中的<code>for</code>循环，使其调用 CUDA 自带的矩阵乘法算子，编译运行并对比不同参数（块大小、矩阵大小）下的运行结果差异</h4>
 <p><center><img src="../assets/3-1-6.png" width = 100%></center></p>
