@@ -1732,7 +1732,7 @@
 <p>&emsp;&emsp;打开终端，<code>cd</code>到<code>llama2.c/</code>目录后，执行<code>make run</code>命令编译代码，随后执行<code>./run stories15M.bin</code>以运行 Llama2 模型。</p>
 <p>&emsp;&emsp;分别执行<code>./run stories42M.bin</code>和<code>./run stories110M.bin</code>，观察不同大小模型的运行时间差别。</p>
 <h4 id="2">2. 查看矩阵乘法实现方式</h4>
-<p>&emsp;&emsp;Llama2 的推理过程实现在 <code>run.c</code> 文件中，矩阵乘法函数则在其中的 <a href="https://github.com/karpathy/llama2.c/blob/master/run.c#L217" target=_blank>第217行</a>。</p>
+<p>&emsp;&emsp;Llama2 的模型推理实现在 <code>run.c</code> 文件中，矩阵乘法函数则在其中的 <a href="https://github.com/karpathy/llama2.c/blob/master/run.c#L217" target=_blank>第217行</a>。</p>
 <p><center><img src="../assets/3-1.png" width = 100%></center></p>
 <p>&emsp;&emsp;从注释可知，<code>matmul</code>函数实现的是 <script type="math/tex">d \times n</script> 的矩阵 <strong><script type="math/tex">W</script></strong> 与维度为 <script type="math/tex">n</script> 的列向量 <strong><script type="math/tex">x</script></strong> 的乘法，且模型推理的性能瓶颈就是矩阵乘法函数（感兴趣的同学们可自行验证）。</p>
 <h4 id="3">3. 通过调试手段查看矩阵乘法的数据规模大小</h4>

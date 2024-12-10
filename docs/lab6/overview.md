@@ -40,7 +40,7 @@
 
 #### 2. 查看矩阵乘法实现方式
 
-&emsp;&emsp;Llama2 的推理过程实现在 `run.c` 文件中，矩阵乘法函数则在其中的 <a href="https://github.com/karpathy/llama2.c/blob/master/run.c#L217" target=_blank>第217行</a>。
+&emsp;&emsp;Llama2 的模型推理实现在 `run.c` 文件中，矩阵乘法函数则在其中的 <a href="https://github.com/karpathy/llama2.c/blob/master/run.c#L217" target=_blank>第217行</a>。
 
 <center><img src="../assets/3-1.png" width = 100%></center>
 
