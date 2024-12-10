@@ -54,7 +54,7 @@
 
 &emsp;&emsp;修改前面实验实现的矩阵优化算法，并将其集成到`run.c`中。
 
-&emsp;&emsp;修改代码后，应先编译代码再执行`./run xxx.bin`。若使用 CUDA优化，需执行`nvcc -O3 -o run run.c -lm`命令编译代码；若使用了 cuBLAS 库，则执行`nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas`编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行`make run`即可。
+&emsp;&emsp;修改代码后，应先编译代码再执行`./run xxx.bin`。若使用 CUDA 优化，需执行`nvcc -O3 -o run run.c -lm`命令编译代码；若使用了 cuBLAS 库，则执行`nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas`编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行`make run`即可。
 
 #### 5. 对比分析优化前后的推理性能
 

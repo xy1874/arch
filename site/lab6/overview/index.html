@@ -1739,7 +1739,7 @@
 <p>&emsp;&emsp;通过在代码中添加<code>printf</code>语句，或使用 GDB 等调试工具，查看<code>matmul</code>函数的输入矩阵的尺寸参数。</p>
 <h4 id="4-matmul">4. 自行选择恰当的优化方法优化<code>matmul</code>函数</h4>
 <p>&emsp;&emsp;修改前面实验实现的矩阵优化算法，并将其集成到<code>run.c</code>中。</p>
-<p>&emsp;&emsp;修改代码后，应先编译代码再执行<code>./run xxx.bin</code>。若使用 CUDA优化，需执行<code>nvcc -O3 -o run run.c -lm</code>命令编译代码；若使用了 cuBLAS 库，则执行<code>nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas</code>编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行<code>make run</code>即可。</p>
+<p>&emsp;&emsp;修改代码后，应先编译代码再执行<code>./run xxx.bin</code>。若使用 CUDA 优化，需执行<code>nvcc -O3 -o run run.c -lm</code>命令编译代码；若使用了 cuBLAS 库，则执行<code>nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas</code>编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行<code>make run</code>即可。</p>
 <h4 id="5">5. 对比分析优化前后的推理性能</h4>
 <p>&emsp;&emsp;分别使用3个<code>.bin</code>文件对优化前后的 Llama2 模型各自运行3~5次，记录推理速度平均值，与优化前的运行效果进行对比，尝试对结果进行分析和优化。</p>
 <p>&emsp;&emsp;下图是使用 CUDA 优化的示例。</p>
