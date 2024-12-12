@@ -61,7 +61,7 @@
 
     <center><img src="../assets/3-2.png" width = 100%></center>
 
-    &emsp;&emsp;此时，执行`cp run.c run.cu`为源文件创建后缀为`.cu`的副本，再执行`nvcc -O3 -o run run.cu -lm`命令进行编译。编译时可能出现如下图所示的错误提示。
+    &emsp;&emsp;此时，执行`cp run.c run.cu`给源文件创建后缀为`.cu`的副本，再执行`nvcc -O3 -o run run.cu -lm`命令进行编译。编译时可能出现如下图所示的错误提示。
 
     <center><img src="../assets/3-3.png" width = 100%></center>
 
