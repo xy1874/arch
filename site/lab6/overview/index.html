@@ -1739,11 +1739,22 @@
 <p>&emsp;&emsp;通过在代码中添加<code>printf</code>语句，或使用 GDB 等调试工具，查看<code>matmul</code>函数的输入矩阵的尺寸参数。</p>
 <h4 id="4-matmul">4. 自行选择恰当的优化方法优化<code>matmul</code>函数</h4>
 <p>&emsp;&emsp;修改前面实验实现的矩阵优化算法，并将其集成到<code>run.c</code>中。</p>
-<p>&emsp;&emsp;修改代码后，应先编译代码再执行<code>./run xxx.bin</code>。若使用 CUDA 优化，需执行<code>nvcc -O3 -o run run.c -lm</code>命令编译代码；若使用了 cuBLAS 库，则执行<code>nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas</code>编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行<code>make run</code>即可。</p>
+<p>&emsp;&emsp;修改代码后，应先编译代码再执行<code>./run xxx.bin</code>，编译时根据需要链接相应的库，具体可参考前面实验的代码。若使用 CUDA 优化，需执行<code>nvcc -O3 -o run run.c -lm</code>命令编译代码；若使用了 cuBLAS 库，则执行<code>nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas</code>编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行<code>make run</code>即可。</p>
+<div class="admonition tip">
+<p class="admonition-title">关于使用 CUDA 编译时可能出现的问题</p>
+<p>&emsp;&emsp;若确认代码无语法错误，但执行<code>nvcc -O3 -o run run.c -lm</code>命令进行编译时，提示<code>dim3</code>、<code>&lt;&lt;&lt;</code>等 CUDA 特有的语法和语句存在错误，如下图所示。</p>
+<p><center><img src="../assets/3-2.png" width = 100%></center></p>
+<p>&emsp;&emsp;此时，执行<code>cp run.c run.cu</code>为源文件创建后缀为<code>.cu</code>的副本，再执行<code>nvcc -O3 -o run run.cu -lm</code>命令进行编译。编译时可能出现如下图所示的错误提示。</p>
+<p><center><img src="../assets/3-3.png" width = 100%></center></p>
+<p>&emsp;&emsp;只需根据报错信息，找到对应语句，添加强制类型转换即可。比如将<code>run.cu</code>第80行的语句改成：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">llama2.c / run.cu</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">s</span><span class="o">-&gt;</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="n">calloc</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">dim</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+</code></pre></div></td></tr></table></div>
+<p>&emsp;&emsp;修改完成后，再次执行<code>nvcc -O3 -o run run.cu -lm</code>进行编译即可。</p>
+</div>
 <h4 id="5">5. 对比分析优化前后的推理性能</h4>
 <p>&emsp;&emsp;分别使用3个<code>.bin</code>文件对优化前后的 Llama2 模型各自运行3~5次，记录推理速度平均值，与优化前的运行效果进行对比，尝试对结果进行分析和优化。</p>
 <p>&emsp;&emsp;下图是使用 CUDA 优化的示例。</p>
-<p><center><img src="../assets/3-2.png" width = 100%></center></p>
+<p><center><img src="../assets/3-4.png" width = 100%></center></p>
 <h2 id="_4">实验报告要求</h2>
 <p>&emsp;&emsp;按以下要求撰写实验报告。实验报告无模板，只需按要求写好相关内容即可。</p>
 <ol>
