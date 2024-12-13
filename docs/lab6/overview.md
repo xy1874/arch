@@ -54,7 +54,7 @@
 
 &emsp;&emsp;修改前面实验实现的矩阵优化算法，并将其集成到`run.c`中。
 
-&emsp;&emsp;修改代码后，应先编译代码再执行`./run xxx.bin`，编译时根据需要链接相应的库，具体可参考前面实验的代码。若使用 CUDA 优化，需执行`nvcc -O3 -o run run.c -lm`命令编译代码；若使用了 cuBLAS 库，则执行`nvcc -O3 -o run run.c -lm -L/usr/local/lib64 -lcublas`编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行`make run`即可。
+&emsp;&emsp;修改代码后，应先编译代码再执行`./run xxx.bin`，编译时根据需要链接相应的库，具体可参考前面实验的代码。若使用 CUDA 优化，需执行`nvcc -arch=compute_35 -O3 -std=c++17 -o run run.c -lm`命令编译代码；若使用了 cuBLAS 库，则执行`nvcc -arch=compute_35 -O3 -std=c++17 -o run run.c -lm -L/usr/local/lib64 -lcublas`编译代码；若采用 AVX、OpenMP 等其他优化方法，则直接执行`make run`即可。
 
 !!! tip "关于使用 CUDA 编译时可能出现的问题"
     &emsp;&emsp;若确认代码无语法错误，但执行`nvcc -O3 -o run run.c -lm`命令进行编译时，提示`dim3`、`<<<`等 CUDA 特有的语法和语句存在错误，如下图所示。
